@@ -55,11 +55,21 @@ logic signed  [31:0][31:0]  sum_r = '0;
 
 integer i;
 integer j;
-integer k;
 
 ////////////////////////////////////////////////////////////////
 //////////////////////   Instantiations   //////////////////////
 ////////////////////////////////////////////////////////////////
+
+genvar k;
+generate
+  for (k = 0; k < NUMTAPS; k=k+1) begin : generate_multipliers
+    mult_primitive multiplier (
+      .Din(din_r),
+      .Coeff(coefficients_r[NUMTAPS-k-1]),
+      .Product(product_c[k])
+    );
+  end
+endgenerate
 
 ////////////////////////////////////////////////////////////////
 ///////////////////////   Module Logic   ///////////////////////
@@ -120,12 +130,14 @@ always_ff @(posedge Clk) begin
   end  
 end
 
+/*
 always_comb begin
   for (j = 0; j < NUMTAPS; j=j+1) begin
     product_c[j] = din_r * $signed(coefficients_r[NUMTAPS-1-j]);
   end
   
 end
+*/
 
 assign Dout = sum_r[31][22:11];
 
