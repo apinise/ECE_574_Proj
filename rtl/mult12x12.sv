@@ -25,12 +25,14 @@ integer j;
 ///////////////////////   Module Logic   ///////////////////////
 ////////////////////////////////////////////////////////////////
 
+// generate shifts for binary multiplication
 generate
   for (i=0; i < 12; i++) begin
     assign next_r[i] = (b[i] == 1) ? (Din << i) : 24'd0;
   end
 endgenerate
 
+// logic for converting signed coefficient to unsigned for mult
 always_comb begin
   if (Coeff[11]) begin
     b = (Coeff ^ XOR_VAL) + 12'd1;
@@ -42,11 +44,11 @@ always_comb begin
   end
 end
 
+// summation of shifts
 always_comb begin
   next_r2 = '0;
   for (j = 0; j < 12; j=j+1) begin
-    next_r2 = next_r2 + next_r[j]; // next_r[0]+next_r[1]+next_r[2]+next_r[3]+next_r[4]+next_r[5]+next_r[6]
-              //+next_r[7]+next_r[8]+next_r[9]+next_r[10]+next_r[11];
+    next_r2 = next_r2 + next_r[j];
   end
 end
 
