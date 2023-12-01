@@ -49,34 +49,34 @@ localparam  TAP0  = -12'd3,  //-12'd3
 ////////////////////////////////////////////////////////////////
 
 logic signed  [31:0][11:0]  coefficients_r;
-logic signed        [12:0]  din_r;
-logic signed  [31:0][24:0]  product_c = '0;
-logic signed  [31:0][24:0]  sum_r = '0;
+logic signed        [11:0]  din_r;
+logic signed  [31:0][23:0]  product_c = '0;
+logic signed  [31:0][23:0]  sum_r = '0;
 
 integer i;
 integer j;
+genvar  k;
 
 ////////////////////////////////////////////////////////////////
 //////////////////////   Instantiations   //////////////////////
 ////////////////////////////////////////////////////////////////
 
-genvar k;
 generate
   for (k = 0; k < NUMTAPS; k=k+1) begin : generate_multipliers
-    /*
+    
     mult12x12 multiplier (
       .Din(din_r),
       .Coeff(coefficients_r[NUMTAPS-k-1]),
       .Product(product_c[k])
     );
-    */
     
+    /*
     mult_primitive multiplier (
       .Din(din_r),
       .Coeff(coefficients_r[NUMTAPS-k-1]),
       .Product(product_c[k])
     );
-    
+    */
   end
 endgenerate
 
@@ -126,8 +126,8 @@ always_ff @(posedge Clk or posedge Hlt) begin
     din_r <= '0;
   end 
   else begin
-    //din_r <= Din;
-    din_r <= {1'b0, Din};
+    din_r <= Din;
+    //din_r <= {1'b0, Din};
   end
 end
 
