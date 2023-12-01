@@ -20,6 +20,8 @@ initial begin
   #5;
   din = 12'h800;
   coeff = 12'h00A;
+  #5;
+  $finish;
 end
 
 endmodule
