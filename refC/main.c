@@ -123,7 +123,7 @@ int main(void) {
         printf("%f\n", q2float(float2q(B[i], DECIMALS), DECIMALS));
     }
 
-    waveGen(10000, 48000);
+    waveGen(10000, 100000);
     //writeWave(WAVE_SIZE, WAVE_FILE);
 
     printf("Filtered Data\n");
