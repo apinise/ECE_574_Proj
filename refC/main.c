@@ -101,13 +101,12 @@ int processSampleTranspose(int sample) {
 
 int processSampleTranspose2(int sample) {
     int q;
-    for (unsigned int i = NUMTAPS - 1; i > 1; i--) {
+    for (unsigned int i = NUMTAPS - 1; i > 0; i--) {
         taps[i] = taps[i - 1] + (sample * decTapCoeff[NUMTAPS-i-1]);
     }
 
     taps[0] = sample * decTapCoeff[31];
-    q = (taps[31] + taps[0]) >> DECIMALS;
-    //output = float2q(q, DECIMALS);
+    q = taps[31] >> DECIMALS;
     return q;
 }
 
