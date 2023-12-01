@@ -1,5 +1,5 @@
 all:
-	gcc -o fir main.c -lm
+	gcc -std=c99 -o fir main.c ./fir -lm
 
 clean:
 	rm -f a.out fir *.o *~ vectors.txt
