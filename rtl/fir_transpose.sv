@@ -51,7 +51,7 @@ localparam  TAP0  = -12'd3,  //-12'd3
 logic signed  [31:0][11:0]  coefficients_r;
 logic signed        [11:0]  din_r;
 logic signed  [31:0][23:0]  product_c = '0;
-logic signed  [31:0][31:0]  sum_r = '0;
+logic signed  [31:0][23:0]  sum_r = '0;
 
 integer i;
 integer j;
@@ -137,15 +137,6 @@ always_ff @(posedge Clk) begin
     sum_r[i] <= sum_r[i-1] + $signed(product_c[i]);
   end  
 end
-
-/*
-always_comb begin
-  for (j = 0; j < NUMTAPS; j=j+1) begin
-    product_c[j] = din_r * $signed(coefficients_r[NUMTAPS-1-j]);
-  end
-  
-end
-*/
 
 assign Dout = sum_r[31][22:11];
 
