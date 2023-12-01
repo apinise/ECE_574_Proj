@@ -6,7 +6,6 @@ module mult12x12 (
 
   localparam XOR_VAL = 24'hFFFFFF;
 
-  logic [23:0]        r;
   logic [11:0][23:0]  next_r;
   logic [23:0] 	      next_r2;
   logic [11:0]        b;
@@ -25,6 +24,7 @@ module mult12x12 (
     end
     else begin
       b = Coeff;
+      Product = next_r2;
     end
   end
   
