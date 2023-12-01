@@ -14,7 +14,7 @@ module mult12x12 (
   genvar i;
   generate
     for (i=0; i < 12; i++) begin
-      assign next_r[i] = (b[i] == 1) ? (a << i) : 24'd0;
+      assign next_r[i] = (b[i] == 1) ? (Din << i) : 24'd0;
     end
   endgenerate
   
