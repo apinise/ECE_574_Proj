@@ -106,7 +106,7 @@ int processSampleTranspose2(int sample) {
     }
 
     taps[0] = sample * decTapCoeff[31];
-    q = taps[31] >> DECIMALS;
+    q = (taps[31] + taps[0]) >> DECIMALS;
     //output = float2q(q, DECIMALS);
     return q;
 }
