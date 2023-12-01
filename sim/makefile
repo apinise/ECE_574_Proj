@@ -1,6 +1,7 @@
 sim_fir:
 	xrun \
 	    ../rtl/fir_transpose.sv \
+		../rtl/mult_primitive.sv \
 	    fir_tb.sv \
 	-access +rwc \
 	-top fir_tb 
