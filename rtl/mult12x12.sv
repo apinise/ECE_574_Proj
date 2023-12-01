@@ -4,7 +4,7 @@ module mult12x12 (
     output logic [23:0]      Product
 );
 
-  localparam XOR_VAL = 12'hFFF;
+  localparam XOR_VAL = 24'hFFFFFF;
 
   logic [23:0]        r;
   logic [11:0][23:0]  next_r;
