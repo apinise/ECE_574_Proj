@@ -1,0 +1,127 @@
+xrun: 22.09-s011: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun	22.09-s011: Started on Dec 02, 2023 at 22:10:58 EST
+xrun
+	../rtl/SPI.sv
+	../rtl/memory.sv
+	SPI_tb.sv
+	-access +rwc
+	-top SPI_tb
+file: ../rtl/SPI.sv
+	module worklib.SPI:sv
+		errors: 0, warnings: 0
+file: ../rtl/memory.sv
+	module worklib.memory:sv
+		errors: 0, warnings: 0
+file: SPI_tb.sv
+		$fscanf(fileHandle, "%s\n", packet_string);
+		      |
+xmvlog: *W,NOSYST (SPI_tb.sv,44|8): System function '$fscanf' invoked as a task. Return value will be ignored.
+		$sscanf(packet_string, "%b", Packet[k]);
+		      |
+xmvlog: *W,NOSYST (SPI_tb.sv,45|8): System function '$sscanf' invoked as a task. Return value will be ignored.
+		$fscanf(fileHandle, "%s\n", packet_string);
+		      |
+xmvlog: *W,NOSYST (SPI_tb.sv,52|8): System function '$fscanf' invoked as a task. Return value will be ignored.
+		$sscanf(packet_string, "%b", Packet_read[k]);
+		      |
+xmvlog: *W,NOSYST (SPI_tb.sv,53|8): System function '$sscanf' invoked as a task. Return value will be ignored.
+	module worklib.SPI_tb:sv
+		errors: 0, warnings: 4
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		SPI_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.memory:sv <0x349d1785>
+			streams:   3, words:  5462
+		worklib.SPI:sv <0x3fa42109>
+			streams:  17, words:  6267
+		worklib.SPI_tb:sv <0x55088b12>
+			streams:  22, words: 12135
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              3       3
+		Registers:           72      72
+		Scalar wires:         8       -
+		Vectored wires:      12       -
+		Always blocks:        6       6
+		Initial blocks:       1       1
+		Pseudo assignments:  14      14
+	Writing initial simulation snapshot: worklib.SPI_tb:sv
+Loading snapshot worklib.SPI_tb:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /opt/cadence/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> run
+Expected Address: 00, Expected Value: 123, Address: 00, Value: 123  ok: 1
+Expected Address: 01, Expected Value: 456, Address: 01, Value: 456  ok: 1
+Expected Address: 02, Expected Value: 789, Address: 02, Value: 789  ok: 1
+Expected Address: 03, Expected Value: 1011, Address: 03, Value: 1011  ok: 1
+Expected Address: 04, Expected Value: 1213, Address: 04, Value: 1213  ok: 1
+Expected Address: 05, Expected Value: 1415, Address: 05, Value: 1415  ok: 1
+Expected Address: 06, Expected Value: 1617, Address: 06, Value: 1617  ok: 1
+Expected Address: 07, Expected Value: 1819, Address: 07, Value: 1819  ok: 1
+Expected Address: 08, Expected Value: 2021, Address: 08, Value: 2021  ok: 1
+Expected Address: 09, Expected Value: 2223, Address: 09, Value: 2223  ok: 1
+Expected Address: 0a, Expected Value: 2425, Address: 0a, Value: 2425  ok: 1
+Expected Address: 0b, Expected Value: 2627, Address: 0b, Value: 2627  ok: 1
+Expected Address: 0c, Expected Value: 2829, Address: 0c, Value: 2829  ok: 1
+Expected Address: 0d, Expected Value: 3031, Address: 0d, Value: 3031  ok: 1
+Expected Address: 0e, Expected Value: 3233, Address: 0e, Value: 3233  ok: 1
+Expected Address: 0f, Expected Value: 3435, Address: 0f, Value: 3435  ok: 1
+Expected Address: 10, Expected Value: 3637, Address: 10, Value: 3637  ok: 1
+Expected Address: 11, Expected Value: 3839, Address: 11, Value: 3839  ok: 1
+Expected Address: 12, Expected Value: 4041, Address: 12, Value: 4041  ok: 1
+Expected Address: 13, Expected Value: 3243, Address: 13, Value: 3243  ok: 1
+Expected Address: 14, Expected Value: 445, Address: 14, Value: 445  ok: 1
+Expected Address: 15, Expected Value: 2647, Address: 15, Value: 2647  ok: 1
+Expected Address: 16, Expected Value: 449, Address: 16, Value: 449  ok: 1
+Expected Address: 17, Expected Value: 1051, Address: 17, Value: 1051  ok: 1
+Expected Address: 18, Expected Value: 1153, Address: 18, Value: 1153  ok: 1
+Expected Address: 19, Expected Value: 455, Address: 19, Value: 455  ok: 1
+Expected Address: 1a, Expected Value: 557, Address: 1a, Value: 557  ok: 1
+Expected Address: 1b, Expected Value: 859, Address: 1b, Value: 859  ok: 1
+Expected Address: 1c, Expected Value: 2061, Address: 1c, Value: 2061  ok: 1
+Expected Address: 1d, Expected Value: 3263, Address: 1d, Value: 3263  ok: 1
+Expected Address: 1e, Expected Value: 465, Address: 1e, Value: 465  ok: 1
+Expected Address: 1f, Expected Value: 3667, Address: 1f, Value: 3667  ok: 1
+TEST PASSED
+Address: 00, Value: 123
+Address: 01, Value: 456
+Address: 02, Value: 789
+Address: 03, Value: 1011
+Address: 04, Value: 1213
+Address: 05, Value: 1415
+Address: 06, Value: 1617
+Address: 07, Value: 1819
+Address: 08, Value: 2021
+Address: 09, Value: 2223
+Address: 0a, Value: 2425
+Address: 0b, Value: 2627
+Address: 0c, Value: 2829
+Address: 0d, Value: 3031
+Address: 0e, Value: 3233
+Address: 0f, Value: 3435
+Address: 10, Value: 3637
+Address: 11, Value: 3839
+Address: 12, Value: 4041
+Address: 13, Value: 3243
+Address: 14, Value: 445
+Address: 15, Value: 2647
+Address: 16, Value: 449
+Address: 17, Value: 1051
+Address: 18, Value: 1153
+Address: 19, Value: 455
+Address: 1a, Value: 557
+Address: 1b, Value: 859
+Address: 1c, Value: 2061
+Address: 1d, Value: 3263
+Address: 1e, Value: 465
+Address: 1f, Value: 3667
+Simulation complete via $finish(1) at time 30390 NS + 0
+./SPI_tb.sv:95 	$finish; 
+xcelium> exit
+TOOL:	xrun	22.09-s011: Exiting on Dec 02, 2023 at 22:10:58 EST  (total: 00:00:00)

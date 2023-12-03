@@ -1,0 +1,5 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(02Dec2023:22:10:58):( xrun ../rtl/SPI.sv ../rtl/memory.sv SPI_tb.sv -access +rwc -top SPI_tb )

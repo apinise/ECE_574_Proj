@@ -1,3 +1,20 @@
+
+
+all: packet spi
+
+spi:
+	xrun \
+      ../rtl/SPI.sv \
+      ../rtl/memory.sv \
+	    SPI_tb.sv \
+	-access +rwc \
+	-top SPI_tb 
+
+packet: 
+	gcc -std=c99 -o packet_program Packet.c
+	./packet_program
+
+ 
 sim_fir:
 	xrun \
 	    ../rtl/fir_transpose.sv \
@@ -14,4 +31,6 @@ sim_mult:
 	-top mult_tb 
 
 clean:
-	rm -rf trace.vcd  xcelium.d  xrun.history  xrun.log xrun.key *~ waves.shm
+	rm -rf trace.vcd xcelium.d xrun.history xrun.log xrun.key *~ waves.shm
+	truncate -s 0 packets.txt packets_read.txt
+
