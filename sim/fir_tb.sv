@@ -56,7 +56,7 @@ initial begin
      $finish;
   end
   
-  fcoeff = $fopen("../refC/output/coeff.txt", "t");
+  fcoeff = $fopen("../refC/output/coeff.txt", "r");
   if (fcoeff == 0) begin
      $display("Could not open refC/coeff.txt");
      $finish;
