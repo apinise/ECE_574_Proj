@@ -2,10 +2,10 @@
 // File created by:  xrun
 // Do not modify this file
 //
-../rtl/SPI.sv
-../rtl/memory.sv
-SPI_tb.sv
+../rtl/fir_transpose.sv
+../rtl/mult12x12.sv
+fir_tb.sv
 -access
 +rwc
 -top
-SPI_tb
+fir_tb

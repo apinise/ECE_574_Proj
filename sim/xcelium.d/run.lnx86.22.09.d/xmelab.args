@@ -6,7 +6,7 @@
 +rwc
 -no_analogsolver
 -MESSAGES
-SPI_tb
+fir_tb
 -XLMODE
 ./xcelium.d/run.lnx86.22.09.d
 -RUNMODE

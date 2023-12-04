@@ -5,4 +5,4 @@
 -ACCESS
 +rwc
 
-SPI_tb
+fir_tb

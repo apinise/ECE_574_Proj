@@ -1,7 +1,10 @@
 #include "main.h"
 
+
 int decTapCoeff[BL];
 int buffer[WAVE_SIZE];
+int wave[WAVE_SIZE];
+int noise[WAVE_SIZE];
 int taps[BL];
 unsigned int NUMTAPS = BL;
 
@@ -65,8 +68,14 @@ void writeWave(int size, char *File_Name) {
 void waveGen(int freq, int samp) {
     srand((unsigned)time(NULL));
     for (int i = 0; i < WAVE_SIZE; i++) {
-        //buffer[i] = float2q(2048 + 1024*sin(freq * (2 * PI) * i / samp), 0);
-        buffer[i] = float2q(2048 + 1024*sin(freq * (2 * PI) * i / samp) + sqrt(0.0001) * rand(), 0);
+        wave[i] = float2q(2048 + 1024*sin(freq * (2 * PI) * i / samp), 0);
+        noise[i] = float2q(64*sin(10000 * (2 * PI) * i / 96000), 0);
+        printf("%d\r\n", wave[i]);
+        printf("%d\r\n", noise[i]);
+    }
+    
+    for (int i = 0; i < WAVE_SIZE; i++) {
+        buffer[i] = wave[i] + noise[i];
     }
 }
 
@@ -123,21 +132,21 @@ int main(void) {
         printf("%f\n", q2float(float2q(B[i], DECIMALS), DECIMALS));
     }
 
-    waveGen(10000, 100000);
-    //writeWave(WAVE_SIZE, WAVE_FILE);
+    waveGen(1000, 48000);
+    writeWave(WAVE_SIZE, WAVE_FILE);
 
     printf("Filtered Data\n");
 
     int p;
     FILE *fp = fopen("vectors.txt", "w"); 
-    //FILE *filter = fopen("filter.txt", "w");
+    FILE *filter = fopen("filter.txt", "w");
     for (unsigned int i = 0; i < WAVE_SIZE; i++) {
         p = processSampleTranspose2(buffer[i]);
         fprintf(fp, "%d %d\n", buffer[i], p); 
-        //fprintf(filter, "%d\n", p); 
-        printf("%d\n", p);
+        fprintf(filter, "%d\n", p); 
+        //printf("%d\n", p);
     }
     fclose(fp); 
-    //fclose(filter);
+    fclose(filter);
     return 0;
 }

@@ -2,6 +2,6 @@
 // File created by:  xrun
 // Do not modify this file
 //
-/home/kpano/ECE_574_Proj/rtl/SPI.sv
-/home/kpano/ECE_574_Proj/rtl/memory.sv
-/home/kpano/ECE_574_Proj/sim/SPI_tb.sv
+/home/ebapinis/ECE_574_Proj/rtl/fir_transpose.sv
+/home/ebapinis/ECE_574_Proj/rtl/mult12x12.sv
+/home/ebapinis/ECE_574_Proj/sim/fir_tb.sv
