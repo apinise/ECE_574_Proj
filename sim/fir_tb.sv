@@ -50,13 +50,13 @@ fir_transpose DUT(
 ////////////////////////////////////////////////////////////////
 
 initial begin
-  fvectors = $fopen("../refC/vectors.txt", "r");
+  fvectors = $fopen("../refC/output/vectors.txt", "r");
   if (fvectors == 0) begin
      $display("Could not open refC/vectors.txt");
      $finish;
   end
   
-  fcoeff = $fopen("../refC/coeff.txt", "t");
+  fcoeff = $fopen("../refC/output/coeff.txt", "t");
   if (fcoeff == 0) begin
      $display("Could not open refC/coeff.txt");
      $finish;
