@@ -171,7 +171,7 @@ always_comb begin
   endcase
 end
 
-
+/*
 initial begin
   coefficients_r[0]   = TAP0;
   coefficients_r[1]   = TAP1;
@@ -205,8 +205,8 @@ initial begin
   coefficients_r[29]  = TAP29;
   coefficients_r[30]  = TAP30;
   coefficients_r[31]  = TAP31;
-
 end
+*/
 
 // Register Inputs
 always_ff @(posedge Clk or posedge Hlt) begin
@@ -233,5 +233,19 @@ assign Dout = sum_r[31][22:11];
 ////////////////////////////////////////////////////////////////
 //////////////////   Instantiation Template   //////////////////
 ////////////////////////////////////////////////////////////////
+
+/*
+fir_transpose fir_filter (
+  .Clk(),
+  .Hlt(),
+  .Din(),
+  .Dout(),
+  .write_address(),
+  .read_address(),
+  .write_value(),
+  .load(),
+  .read_value()
+);
+*/
 
 endmodule
