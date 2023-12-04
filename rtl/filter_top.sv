@@ -23,7 +23,7 @@ logic [7:0]   register_address;
 logic [11:0]  register_value;
 logic [7:0]   read_address;
 logic [11:0]  read_value;
-logic         load
+logic         load;
 
 ////////////////////////////////////////////////////////////////
 //////////////////////   Instantiations   //////////////////////

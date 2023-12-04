@@ -39,7 +39,7 @@ initial begin
 	test_pass <= 1'b1; 
 	
 	
-    fileHandle = $fopen("packets.txt", "r");
+    fileHandle = $fopen("../refC/packets.txt", "r");
 	for (int k= 0; k <32; k++) begin
 		$fscanf(fileHandle, "%s\n", packet_string);
 		$sscanf(packet_string, "%b", Packet[k]);
@@ -47,7 +47,7 @@ initial begin
 
     $fclose(fileHandle);
 	
-	fileHandle = $fopen("packets_read.txt", "r");
+	fileHandle = $fopen("../refC/packets_read.txt", "r");
 	for (int k= 0; k <32; k++) begin
 		$fscanf(fileHandle, "%s\n", packet_string);
 		$sscanf(packet_string, "%b", Packet_read[k]);

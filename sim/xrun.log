@@ -1,40 +1,14 @@
 xrun: 22.09-s011: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun	22.09-s011: Started on Dec 03, 2023 at 22:41:14 EST
+TOOL:	xrun	22.09-s011: Started on Dec 04, 2023 at 18:14:19 EST
 xrun
+	../rtl/SPI.sv
+	../rtl/filter_top.sv
 	../rtl/fir_transpose.sv
 	../rtl/mult12x12.sv
-	fir_tb.sv
+	filter_top_tb.sv
 	-access +rwc
-	-top fir_tb
-Recompiling... reason: file '../rtl/fir_transpose.sv' is newer than expected.
-	expected: Sun Dec  3 22:12:47 2023
-	actual:   Sun Dec  3 22:41:02 2023
-file: ../rtl/fir_transpose.sv
-	module worklib.fir_transpose:sv
-		errors: 0, warnings: 0
-	Elaborating the design hierarchy:
-		Caching library 'worklib' ....... Done
-	Top level design units:
-		fir_tb
-xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
-	Building instance overlay tables: .................... Done
-	Generating native compiled code:
-		worklib.fir_transpose:sv <0x597c6adc>
-			streams:  13, words: 21836
-	Building instance specific data structures.
-	Loading native compiled code:     .................... Done
-	Design hierarchy summary:
-		               Instances  Unique
-		Modules:              34       3
-		Registers:           186      31
-		Scalar wires:          3       -
-		Vectored wires:      521       -
-		Always blocks:        69       7
-		Initial blocks:        3       3
-		Cont. assignments:   385       2
-		Pseudo assignments:  105      12
-	Writing initial simulation snapshot: worklib.fir_tb:sv
-Loading snapshot worklib.fir_tb:sv .................... Done
+	-top filter_top_tb
+Loading snapshot worklib.filter_top_tb:sv .................... Done
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 xcelium> source /opt/cadence/XCELIUM2209/tools/xcelium/files/xmsimrc
 xcelium> run
@@ -2087,7 +2061,7 @@ Din 1432 Dout 3149 chkDout 3149 OK 1
 Din 1368 Dout 3134 chkDout 3134 OK 1
 Din 1298 Dout 3103 chkDout 3103 OK 1
 TESTBENCH PASSES
-Simulation complete via $finish(1) at time 20655 NS + 0
-./fir_tb.sv:112   $finish;
+Simulation complete via $finish(1) at time 38735 NS + 1
+./filter_top_tb.sv:133   $finish;
 xcelium> exit
-TOOL:	xrun	22.09-s011: Exiting on Dec 03, 2023 at 22:41:34 EST  (total: 00:00:20)
+TOOL:	xrun	22.09-s011: Exiting on Dec 04, 2023 at 18:14:19 EST  (total: 00:00:00)

@@ -14,11 +14,7 @@ logic SCK;
 logic CS;
 logic MOSI;
 logic MISO; 
-logic load, ok;
-logic [7:0] register_address;
-logic [11:0] register_value;
-logic [7:0] read_address;
-logic [11:0] read_value;
+
 
 logic [6:0] count; 
 logic [31:0] mess; 
@@ -41,11 +37,7 @@ logic done;
 logic [11:0]  din;
 logic [11:0]  dout;
 
-logic [7:0]   write_address;
-logic [7:0]   read_address;
-logic [11:0]  write_value;
-logic [11:0]  read_value;
-logic         load;
+
 
 logic [11:0]  chkDout, chkDout_r;
 logic 	      testbench_pass;
@@ -88,7 +80,7 @@ initial begin
   reset = 1;
   
 	
-    fileHandle = $fopen("packets.txt", "r");
+    fileHandle = $fopen("../refC/packets.txt", "r");
 	for (int k= 0; k <32; k++) begin
 		$fscanf(fileHandle, "%s\n", packet_string);
 		$sscanf(packet_string, "%b", Packet[k]);
@@ -96,49 +88,17 @@ initial begin
 
     $fclose(fileHandle);
 	
-	fileHandle = $fopen("packets_read.txt", "r");
-	for (int k= 0; k <32; k++) begin
-		$fscanf(fileHandle, "%s\n", packet_string);
-		$sscanf(packet_string, "%b", Packet_read[k]);
-	end
-
-    $fclose(fileHandle);
 
 	for (int i = 0; i < 32; i++) begin
-        rands = $random;
-        ///		preamble/address/value/last4-bits dont matter 
         //mess = {8'hFB, rands[23:0]};
 		mess = Packet[i];
-        count = 7'd31;
-        @(negedge load);
-        #30;
-        CS = 1'b0;
-        #340;
-        CS = 1'b1;
-        if(mess[23:16] == register_address && mess[11:0] == register_value)
-            ok = 1'b1;
-        else 
-            ok = 1'b0;
-        $display("Expected Address: %h, Expected Value: %0d, Address: %h, Value: %0d  ok: %b", mess[23:16], mess[11:0], register_address, register_value, ok);
-        test_pass = test_pass & ok; 
-    end
-    
-    if(test_pass)
-         $display("TEST PASSED");
-    else 
-         $display("TEST FAILED");
-	
-	for (int i = 0; i < 32; i++) begin
-        ///		preamble/address/value/last4-bits dont matter 
-		mess = Packet_read[i];
         count = 7'd31;
         #30;
         CS = 1'b0;
         #540;
         CS = 1'b1;
-
-        $display("Address: %h, Value: %0d", read_address, read_value);
     end
+    
     
   fvectors = $fopen("../refC/vectors.txt", "r");
   if (fvectors == 0) begin

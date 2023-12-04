@@ -1,7 +1,13 @@
 #include "main.h"
+#include "Packet.h"
+#include "fdacoefs.h"
+
+#include <stdio.h>
+#include <stdint.h>
+#include <stdbool.h>
+#include <math.h>
 
 
-int decTapCoeff[BL];
 int buffer[WAVE_SIZE];
 int wave[WAVE_SIZE];
 int noise[WAVE_SIZE];
@@ -148,5 +154,7 @@ int main(void) {
     }
     fclose(fp); 
     fclose(filter);
+    
+    packet();
     return 0;
 }

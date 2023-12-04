@@ -1,6 +1,4 @@
-s1(02Dec2023:22:10:58):  xrun ../rtl/SPI.sv ../rtl/memory.sv SPI_tb.sv -access +rwc -top SPI_tb 
-s2(03Dec2023:22:12:59):  xrun ../rtl/fir_transpose.sv ../rtl/mult12x12.sv fir_tb.sv -access +rwc -top fir_tb 
-s3(03Dec2023:22:14:06):  xrun ../rtl/fir_transpose.sv ../rtl/mult12x12.sv fir_tb.sv -access +rwc -top fir_tb 
-s4(03Dec2023:22:15:52):  xrun ../rtl/fir_transpose.sv ../rtl/mult12x12.sv fir_tb.sv -access +rwc -top fir_tb 
-s5(03Dec2023:22:21:37):  xrun ../rtl/fir_transpose.sv ../rtl/mult12x12.sv fir_tb.sv -access +rwc -top fir_tb 
-s6(03Dec2023:22:41:15):  xrun ../rtl/fir_transpose.sv ../rtl/mult12x12.sv fir_tb.sv -access +rwc -top fir_tb 
+s1(04Dec2023:18:07:36):  xrun ../rtl/SPI.sv ../rtl/filter_top.sv ../rtl/fir_transpose.sv ../rtl/mult12x12.sv filter_top_tb.sv -access +rwc -top filter_top_tb 
+s2(04Dec2023:18:09:07):  xrun ../rtl/SPI.sv ../rtl/filter_top.sv ../rtl/fir_transpose.sv ../rtl/mult12x12.sv filter_top_tb.sv -access +rwc -top filter_top_tb 
+s3(04Dec2023:18:13:54):  xrun ../rtl/SPI.sv ../rtl/filter_top.sv ../rtl/fir_transpose.sv ../rtl/mult12x12.sv filter_top_tb.sv -access +rwc -top filter_top_tb 
+s4(04Dec2023:18:14:19):  xrun ../rtl/SPI.sv ../rtl/filter_top.sv ../rtl/fir_transpose.sv ../rtl/mult12x12.sv filter_top_tb.sv -access +rwc -top filter_top_tb 

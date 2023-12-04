@@ -2,13 +2,15 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
-#include "fdacoefs.h"
+
 
 #define FILE_NAME "coeff.txt"
 #define DECIMALS 11
 #define PI 3.141592653589793
 #define WAVE_SIZE 2048
 #define WAVE_FILE "wave.txt"
+
+int decTapCoeff[32];
 
 int float2q(float x, int f);
 float q2float(int x, int f);
