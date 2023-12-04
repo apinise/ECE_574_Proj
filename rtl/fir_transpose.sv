@@ -1,8 +1,15 @@
 module fir_transpose (
-  input   logic Clk,
-  input   logic Hlt,
-  input   logic [11:0]  Din,
-  output  logic [11:0]  Dout
+  //FIR Filter Nets
+  input   logic         Clk,            // Global clk
+  input   logic         Hlt,            // Halts computation of FIR
+  input   logic [11:0]  Din,            // 12-bit input data from ADC
+  output  logic [11:0]  Dout,           // 12-bit output data from Filter to DAC
+  // Coefficient Mem Nets
+  input   logic [7:0]   write_address,  // Write address for tap coefficients
+  input   logic [7:0]   read_address,   // Read address for tap coefficients
+  input   logic [11:0]  write_value,    // Value to load into tap coefficient register
+  input   logic         load,           // Enable to load data in tap coefficient regs
+  output  logic [11:0]  read_value      // Value read from tap coefficient for program verification
 );
 
 ////////////////////////////////////////////////////////////////
@@ -83,6 +90,87 @@ endgenerate
 ////////////////////////////////////////////////////////////////
 ///////////////////////   Module Logic   ///////////////////////
 ////////////////////////////////////////////////////////////////
+
+// Load coefficients
+always_comb begin
+  if (load) begin
+    casez(write_address)
+      8'd0:   coefficients_r[0]   = write_value;
+      8'd1:   coefficients_r[1]   = write_value;
+      8'd2:   coefficients_r[2]   = write_value;
+      8'd3:   coefficients_r[3]   = write_value;
+      8'd4:   coefficients_r[4]   = write_value;
+      8'd5:   coefficients_r[5]   = write_value;
+      8'd6:   coefficients_r[6]   = write_value;
+      8'd7:   coefficients_r[7]   = write_value;
+      8'd8:   coefficients_r[8]   = write_value;
+      8'd9:   coefficients_r[9]   = write_value;
+      8'd10:  coefficients_r[10]  = write_value;
+      8'd11:  coefficients_r[11]  = write_value;
+      8'd12:  coefficients_r[12]  = write_value;
+      8'd13:  coefficients_r[13]  = write_value;
+      8'd14:  coefficients_r[14]  = write_value;
+      8'd15:  coefficients_r[15]  = write_value;
+      8'd16:  coefficients_r[16]  = write_value;
+      8'd17:  coefficients_r[17]  = write_value;
+      8'd18:  coefficients_r[18]  = write_value;
+      8'd19:  coefficients_r[19]  = write_value;
+      8'd20:  coefficients_r[20]  = write_value;
+      8'd21:  coefficients_r[21]  = write_value;
+      8'd22:  coefficients_r[22]  = write_value;
+      8'd23:  coefficients_r[23]  = write_value;
+      8'd24:  coefficients_r[24]  = write_value;
+      8'd25:  coefficients_r[25]  = write_value;
+      8'd26:  coefficients_r[26]  = write_value;
+      8'd27:  coefficients_r[27]  = write_value;
+      8'd28:  coefficients_r[28]  = write_value;
+      8'd29:  coefficients_r[29]  = write_value;
+      8'd30:  coefficients_r[30]  = write_value;
+      8'd31:  coefficients_r[31]  = write_value;
+      default: coefficients_r[0]  = coefficients_r[0];
+    endcase
+  end
+end
+
+// Read coefficients
+always_comb begin
+  casez(read_address)
+    8'd0:     read_value  = coefficients_r[0];
+    8'd1:     read_value  = coefficients_r[1];
+    8'd2:     read_value  = coefficients_r[2];
+    8'd3:     read_value  = coefficients_r[3];
+    8'd4:     read_value  = coefficients_r[4];
+    8'd5:     read_value  = coefficients_r[5];
+    8'd6:     read_value  = coefficients_r[6];
+    8'd7:     read_value  = coefficients_r[7];
+    8'd8:     read_value  = coefficients_r[8];
+    8'd9:     read_value  = coefficients_r[9];
+    8'd10:    read_value  = coefficients_r[10];
+    8'd11:    read_value  = coefficients_r[11];
+    8'd12:    read_value  = coefficients_r[12];
+    8'd13:    read_value  = coefficients_r[13];
+    8'd14:    read_value  = coefficients_r[14];
+    8'd15:    read_value  = coefficients_r[15];
+    8'd16:    read_value  = coefficients_r[16];
+    8'd17:    read_value  = coefficients_r[17];
+    8'd18:    read_value  = coefficients_r[18];
+    8'd19:    read_value  = coefficients_r[19];
+    8'd20:    read_value  = coefficients_r[20];
+    8'd21:    read_value  = coefficients_r[21];
+    8'd22:    read_value  = coefficients_r[22];
+    8'd23:    read_value  = coefficients_r[23];
+    8'd24:    read_value  = coefficients_r[24];
+    8'd25:    read_value  = coefficients_r[25];
+    8'd26:    read_value  = coefficients_r[26];
+    8'd27:    read_value  = coefficients_r[27];
+    8'd28:    read_value  = coefficients_r[28];
+    8'd29:    read_value  = coefficients_r[29];
+    8'd30:    read_value  = coefficients_r[30];
+    8'd31:    read_value  = coefficients_r[31];
+    default:  read_value  = '0;
+  endcase
+end
+
 
 initial begin
   coefficients_r[0]   = TAP0;
