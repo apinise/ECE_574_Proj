@@ -24,7 +24,7 @@ logic [11:0]  write_value;
 logic [11:0]  read_value;
 logic         load;
 
-logic [11:0]  chkDout;
+logic [11:0]  chkDout, chkDout_r;
 logic 	      testbench_pass;
 integer       fvectors, r;
 integer       fcoeff, t;
@@ -70,6 +70,7 @@ initial begin
 	din = 0;
 	start = 0;
 	testbench_pass = 1;
+  chkDout_r = 0;
   
 	reset = 1;
   
@@ -95,8 +96,10 @@ initial begin
        
 	     @(posedge clk);
        
-       $display("Din %d Dout %d chkDout %d OK %b", din, dout, chkDout, (dout == chkDout));
-	     testbench_pass = testbench_pass && (dout == chkDout);	     
+       chkDout_r <= chkDout;
+       
+       $display("Din %d Dout %d chkDout %d OK %b", din, dout, chkDout_r, (dout == chkDout_r));
+	     testbench_pass = testbench_pass && (dout == chkDout_r);	     
 	  end
 
 	$fclose(fvectors);
