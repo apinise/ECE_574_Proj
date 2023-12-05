@@ -1,10 +1,10 @@
 read_lib /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib
 
-read_verilog ../syn/outputs/cdf45.v
+read_verilog ../syn/outputs/cdf45_netlist.v
 set_top_module filter_top
 
-read_sdc ../syn/outputs/cdf45.sdc
-read_sdf ../syn/outputs/cdf45.sdf
+read_sdc ../syn/outputs/cdf45_constraints.sdc
+read_sdf ../syn/outputs/cdf45_delays.sdf
 
 report_timing -late -max_paths 3 > pipe_late.rpt
 report_timing -early -max_paths 3 > pipe_early.rpt

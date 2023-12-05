@@ -1,8 +1,8 @@
 syn:
 	BASENAME=filter_top \
-	CLOCKPERIOD=8 \
+	CLOCKPERIOD=2 \
         TIMINGLIBS='/opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib' \
-	CORENETLIST='../syn/outputs/cdf45.v' \
+	CORENETLIST='../syn/outputs/cdf45_netlist.v' \
         LEF='/opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/lef/gsclib045_tech.lef /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/lef/gsclib045_macro.lef' \
         QRC='/opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/qrc/qx/gpdk045.tch' \
         genus -f run_genus.tcl

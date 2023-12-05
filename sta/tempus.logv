@@ -1,0 +1,67 @@
+[12/04 18:53:49      0s] 
+[12/04 18:53:49      0s] Cadence Tempus(TM) Timing Signoff Solution.
+[12/04 18:53:49      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[12/04 18:53:49      0s] 
+[12/04 18:53:49      0s] Version:	v22.10-p001_1, built Tue Aug 9 17:51:02 PDT 2022
+[12/04 18:53:49      0s] Options:	-files tempus.tcl 
+[12/04 18:53:49      0s] Date:		Mon Dec  4 18:53:49 2023
+[12/04 18:53:49      0s] Host:		arc-schaumont-class-vm (x86_64 w/Linux 3.10.0-1160.99.1.el7.x86_64) (1core*4cpus*Intel Xeon Processor (Cascadelake) 16384KB)
+[12/04 18:53:49      0s] OS:		Red Hat Enterprise Linux Server release 7.9 (Maipo)
+[12/04 18:53:49      0s] 
+[12/04 18:53:49      0s] License:
+[12/04 18:53:49      0s] 		[18:53:49.456177] Configured Lic search path (21.01-s002): 5280@arclic02.wpi.edu
+
+[12/04 18:53:49      0s] 		tpsxl	Tempus Timing Signoff Solution XL	22.1	checkout succeeded
+[12/04 18:53:49      0s] 		16 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[12/04 18:54:11     11s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Tempus Timing Signoff Solution v22.10-p001_1 (64bit) 08/09/2022 17:51 (Linux 3.10.0-693.el7.x86_64)
+[12/04 18:54:18     17s] @(#)CDS: NanoRoute 22.10-p001_1 NR220728-0225/22_10-UB (database version 18.20.589) {superthreading v2.19}
+[12/04 18:54:18     17s] @(#)CDS: AAE 22.10-p001 (64bit) 08/09/2022 (Linux 3.10.0-693.el7.x86_64)
+[12/04 18:54:18     17s] @(#)CDS: CTE 22.10-p001_1 () Aug  8 2022 14:54:03 ( )
+[12/04 18:54:18     17s] @(#)CDS: SYNTECH 22.10-p001_1 () Aug  8 2022 11:26:34 ( )
+[12/04 18:54:18     17s] @(#)CDS: CPE v22.10-p001
+[12/04 18:54:18     17s] @(#)CDS: OA 22.60-p076 Wed May 18 13:45:29 2022
+[12/04 18:54:18     17s] @(#)CDS: SGN 21.20-d001 (11-Feb-2022) (64 bit executable, TkQt5.9.1)
+[12/04 18:54:18     17s] @(#)CDS: RCDB 11.15.0
+[12/04 18:54:18     17s] @(#)CDS: STYLUS 22.10-a006_1 (05/21/2022 01:23 PDT)
+[12/04 18:54:18     17s] Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+[12/04 18:54:18     17s] **INFO: (TMPDIR-1001): The environment variable TMPDIR is not set.
+Create and set the environment variable TMPDIR to '/tmp/ssv_tmpdir_15572_HNrQgP'.
+environment variable TMPDIR is '/tmp/ssv_tmpdir_15572_HNrQgP'.
+[12/04 18:54:19     18s] #@ Processing -files option
+[12/04 18:54:19     18s] Sourcing tcl/tk file 'tempus.tcl' ...
+[12/04 18:54:19     18s] <CMD> read_lib /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib
+[12/04 18:54:20     18s] <CMD> read_verilog ../syn/outputs/cdf45.v
+[12/04 18:54:20     19s] <CMD> set_top_module filter_top
+[12/04 18:54:20     19s] #% Begin Load MMMC data ... (date=12/04 18:54:20, mem=1005.6M)
+[12/04 18:54:20     19s] Number of views requested 1 are allowed with the current licenses... continuing with set_analysis_view.
+[12/04 18:54:20     19s] #% End Load MMMC data ... (date=12/04 18:54:20, total cpu=0:00:00.0, real=0:00:00.0, peak res=1005.6M, current mem=1005.6M)
+[12/04 18:54:20     19s] Loading view definition file from .ssv_emulate_view_definition_15572.tcl
+[12/04 18:54:20     19s] Reading default_emulate_libset_max timing library '/opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib' ...
+[12/04 18:54:20     19s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP9'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+[12/04 18:54:20     19s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP8'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+[12/04 18:54:20     19s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP7'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+[12/04 18:54:20     19s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP6'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+[12/04 18:54:20     19s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP5'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+[12/04 18:54:20     19s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP4'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+[12/04 18:54:20     19s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP3'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+[12/04 18:54:20     19s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP2'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+[12/04 18:54:20     19s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP10'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+[12/04 18:54:20     19s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+[12/04 18:54:21     19s] Read 489 cells in library 'fast_vdd1v2' 
+[12/04 18:54:21     19s] Ending "PreSetAnalysisView" (total cpu=0:00:00.6, real=0:00:01.0, peak res=1050.2M, current mem=1013.4M)
+[12/04 18:54:21     19s] *** End library_loading (cpu=0.01min, real=0.02min, mem=14.5M, fe_cpu=0.33min, fe_real=0.53min, fe_mem=1153.8M) ***
+[12/04 18:54:21     19s] **ERROR: (UI-402):	'../syn/outputs/cdf45.v' not found.
+[12/04 18:54:21     20s] (file "tempus.tcl" line 4)
+[12/04 18:55:42     24s] **INFO (INTERRUPT): The current script will stop before next command.
+[12/04 18:55:42     24s] **INFO (INTERRUPT): One more Ctrl-C to exit Tempus Timing Signoff Solution ...
+[12/04 18:55:43     25s] Tempus Timing Signoff Solution terminated by user interrupt.
+[12/04 18:55:43     25s] 
+[12/04 18:55:43     25s] *** Memory Usage v#1 (Current mem = 1150.789M, initial mem = 523.699M) ***
+[12/04 18:55:44     25s] 
+[12/04 18:55:44     25s] *** Summary of all messages that are not suppressed in this session:
+[12/04 18:55:44     25s] Severity  ID               Count  Summary                                  
+[12/04 18:55:44     25s] ERROR     UI-402               2  %s                                       
+[12/04 18:55:44     25s] WARNING   TECHLIB-302         10  No function defined for cell '%s'. The c...
+[12/04 18:55:44     25s] *** Message Summary: 10 warning(s), 2 error(s)
+[12/04 18:55:44     25s] 
+[12/04 18:55:44     25s] --- Ending "Tempus Timing Signoff Solution" (totcpu=0:00:25.0, real=0:01:55, mem=1150.8M) ---

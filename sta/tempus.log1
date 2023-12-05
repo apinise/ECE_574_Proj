@@ -1,0 +1,225 @@
+
+Cadence Tempus(TM) Timing Signoff Solution.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v22.10-p001_1, built Tue Aug 9 17:51:02 PDT 2022
+Options:	-files tempus.tcl 
+Date:		Mon Dec  4 18:55:46 2023
+Host:		arc-schaumont-class-vm (x86_64 w/Linux 3.10.0-1160.99.1.el7.x86_64) (1core*4cpus*Intel Xeon Processor (Cascadelake) 16384KB)
+OS:		Red Hat Enterprise Linux Server release 7.9 (Maipo)
+
+License:
+		[18:55:46.456169] Configured Lic search path (21.01-s002): 5280@arclic02.wpi.edu
+
+		tpsxl	Tempus Timing Signoff Solution XL	22.1	checkout succeeded
+		16 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+environment variable TMPDIR is '/tmp/ssv_tmpdir_16022_HEo4Su'.
+#@ Processing -files option
+Sourcing tcl/tk file 'tempus.tcl' ...
+<CMD> read_lib /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib
+<CMD> read_verilog ../syn/outputs/cdf45_netlist.v
+<CMD> set_top_module filter_top
+#% Begin Load MMMC data ... (date=12/04 18:56:16, mem=1002.0M)
+Number of views requested 1 are allowed with the current licenses... continuing with set_analysis_view.
+#% End Load MMMC data ... (date=12/04 18:56:16, total cpu=0:00:00.0, real=0:00:00.0, peak res=1002.0M, current mem=1002.0M)
+default_emulate_early_rc_corner default_emulate_late_rc_corner default_emulate_rc_corner
+Loading view definition file from .ssv_emulate_view_definition_16022.tcl
+Reading default_emulate_libset_max timing library '/opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP9'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP8'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP7'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP6'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP5'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP4'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP3'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP2'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP10'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+Read 489 cells in library 'fast_vdd1v2' 
+*** End library_loading (cpu=0.01min, real=0.02min, mem=14.5M, fe_cpu=0.33min, fe_real=0.52min, fe_mem=1153.8M) ***
+#% Begin Load netlist data ... (date=12/04 18:56:17, mem=1009.8M)
+*** Begin netlist parsing (mem=1153.8M) ***
+Reading verilog netlist '../syn/outputs/cdf45_netlist.v'
+
+*** Memory Usage v#1 (Current mem = 1319.805M, initial mem = 523.699M) ***
+*** End netlist parsing (cpu=0:00:00.2, real=0:00:00.0, mem=1319.8M) ***
+#% End Load netlist data ... (date=12/04 18:56:17, total cpu=0:00:00.6, real=0:00:00.0, peak res=1128.9M, current mem=1118.6M)
+Set top cell to filter_top.
+Starting consistency checks on late and early library sets of delay corner 'default_emulate_delay_corner'
+late library set: default_emulate_libset_max
+early library set: default_emulate_libset_min
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'default_emulate_delay_corner'
+late library set: default_emulate_libset_max
+early library set: default_emulate_libset_min
+Completed consistency checks. Status: Successful
+Building hierarchical netlist for Cell filter_top ...
+***** UseNewTieNetMode *****.
+*** Netlist is unique.
+** info: there are 490 modules.
+** info: there are 21738 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 1679.262M, initial mem = 523.699M) ***
+Set Default Input Pin Transition as 0.1 ps.
+/dev/null
+Extraction setup Started 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: default_emulate_view
+    RC-Corner Name        : default_emulate_rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PostRoute Res Factor        : 1
+    RC-Corner PostRoute Cap Factor        : 1
+    RC-Corner PostRoute XCap Factor       : 1
+Starting consistency checks on late and early library sets of delay corner 'default_emulate_delay_corner'
+late library set: default_emulate_libset_max
+early library set: default_emulate_libset_min
+Completed consistency checks. Status: Successful
+Reading timing constraints file '/dev/null' ...
+Current (total cpu=0:00:21.3, real=0:00:32.0, peak res=1733.5M, current mem=1733.5M)
+Total number of combinational cells: 314
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX12 BUFX16 BUFX2 BUFX20 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX2 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX12 CLKINVX16 CLKINVX2 CLKINVX20 CLKINVX3 CLKINVX4 CLKINVX6 CLKINVX8 INVX1 INVX12 INVX16 INVX2 INVX20 INVX3 INVX4 INVX6 INVXL INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X4 DLY4X1
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+default_emulate_constraint_mode
+Extraction setup Started 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: default_emulate_view
+    RC-Corner Name        : default_emulate_rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 0 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PostRoute Res Factor        : 1
+    RC-Corner PostRoute Cap Factor        : 1
+    RC-Corner PostRoute XCap Factor       : 1
+Extraction setup Started 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: default_emulate_view
+    RC-Corner Name        : default_emulate_rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 0 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PostRoute Res Factor        : 1
+    RC-Corner PostRoute Cap Factor        : 1
+    RC-Corner PostRoute XCap Factor       : 1
+Extraction setup Started 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: default_emulate_view
+    RC-Corner Name        : default_emulate_rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 0 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PostRoute Res Factor        : 1
+    RC-Corner PostRoute Cap Factor        : 1
+    RC-Corner PostRoute XCap Factor       : 1
+default_emulate_libset_max default_emulate_libset_min
+<CMD> read_sdc ../syn/outputs/cdf45_constraints.sdc
+Current (total cpu=0:00:21.8, real=0:00:33.0, peak res=1764.4M, current mem=1722.9M)
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../syn/outputs/cdf45_constraints.sdc, Line 9).
+
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../syn/outputs/cdf45_constraints.sdc, Line 10).
+
+filter_top
+INFO (CTE): Reading of timing constraints file ../syn/outputs/cdf45_constraints.sdc completed, with 2 WARNING
+Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1727.7M, current mem=1727.7M)
+Current (total cpu=0:00:21.8, real=0:00:33.0, peak res=1764.4M, current mem=1727.7M)
+<CMD> read_sdf ../syn/outputs/cdf45_delays.sdf
+default_emulate_view
+default_emulate_view
+<CMD> report_timing -late -max_paths 3 > pipe_late.rpt
+AAE_INFO: opIsDesignInPostRouteState() is 0
+AAE DB initialization (MEM=2041.17 CPU=0:00:00.0 REAL=0:00:00.0) 
+#################################################################################
+# Design Name: filter_top
+# Design Mode: 65nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Start delay calculation (fullDC) (1 T). (MEM=1902.2)
+/dev/null
+End delay calculation. (MEM=2076.73 CPU=0:00:04.5 REAL=0:00:04.0)
+End delay calculation (fullDC). (MEM=2068.73 CPU=0:00:04.8 REAL=0:00:05.0)
+**WARN: (SDF-112):	Port delay on pin 'spi_load_reg_reg/RN' does not match with timing model (Line 12913).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_load_reg_reg/SN' does not match with timing model (Line 12914).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_byte_received_reg[0]/RN' does not match with timing model (Line 28062).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_byte_received_reg[0]/SN' does not match with timing model (Line 28063).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_byte_received_reg[1]/RN' does not match with timing model (Line 28082).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_byte_received_reg[1]/SN' does not match with timing model (Line 28083).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_byte_received_reg[2]/RN' does not match with timing model (Line 28102).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_byte_received_reg[2]/SN' does not match with timing model (Line 28103).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_byte_received_reg[3]/RN' does not match with timing model (Line 28122).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_byte_received_reg[3]/SN' does not match with timing model (Line 28123).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_byte_received_reg[4]/RN' does not match with timing model (Line 28142).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_byte_received_reg[4]/SN' does not match with timing model (Line 28143).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_byte_received_reg[5]/RN' does not match with timing model (Line 28162).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_byte_received_reg[5]/SN' does not match with timing model (Line 28163).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_byte_received_reg[6]/RN' does not match with timing model (Line 28182).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_byte_received_reg[6]/SN' does not match with timing model (Line 28183).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_byte_received_reg[7]/RN' does not match with timing model (Line 28202).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_byte_received_reg[7]/SN' does not match with timing model (Line 28203).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_read_que_reg/RN' does not match with timing model (Line 28222).
+
+**WARN: (SDF-112):	Port delay on pin 'spi_read_que_reg/SN' does not match with timing model (Line 28223).
+
+Message <SDF-112> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+<CMD> report_timing -early -max_paths 3 > pipe_early.rpt
+<CMD> report_timing  -from [all_inputs] -to [all_outputs] -max_paths 12 -path_type summary  > pipe_allpaths.rpt
+<CMD> report_timing  -from [all_inputs] -to [all_registers] -max_paths 12 -path_type summary  >> pipe_allpaths.rpt
+<CMD> report_timing  -from [all_registers] -to [all_registers] -max_paths 12 -path_type summary >> pipe_allpaths.rpt
+<CMD> report_timing  -from [all_registers] -to [all_outputs] -max_paths 12 -path_type summary >> pipe_allpaths.rpt
+<CMD> exit
+
+*** Memory Usage v#1 (Current mem = 2006.520M, initial mem = 523.699M) ***
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   SDF-112            130  Port delay on pin '%s' does not match wi...
+WARNING   TCLCMD-1461          2  Skipped unsupported command: %s          
+WARNING   TECHLIB-302         10  No function defined for cell '%s'. The c...
+*** Message Summary: 142 warning(s), 0 error(s)
+
+--- Ending "Tempus Timing Signoff Solution" (totcpu=0:00:29.5, real=0:00:41.0, mem=2006.5M) ---
