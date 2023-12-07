@@ -7,4 +7,4 @@
 -ACCESS
 +rwc
 
-filter_top_tb
+fir_tb

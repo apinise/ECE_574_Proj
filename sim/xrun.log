@@ -1,42 +1,23 @@
 xrun: 22.09-s011: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun	22.09-s011: Started on Dec 04, 2023 at 18:17:41 EST
+TOOL:	xrun	22.09-s011: Started on Dec 06, 2023 at 22:42:23 EST
 xrun
-	../rtl/SPI.sv
-	../rtl/filter_top.sv
 	../rtl/fir_transpose.sv
 	../rtl/mult12x12.sv
-	filter_top_tb.sv
+	fir_tb.sv
 	-access +rwc
-	-top filter_top_tb
-file: filter_top_tb.sv
-		$fscanf(fileHandle, "%s\n", packet_string);
-		      |
-xmvlog: *W,NOSYST (filter_top_tb.sv,85|8): System function '$fscanf' invoked as a task. Return value will be ignored.
-		$sscanf(packet_string, "%b", Packet[k]);
-		      |
-xmvlog: *W,NOSYST (filter_top_tb.sv,86|8): System function '$sscanf' invoked as a task. Return value will be ignored.
-	Elaborating the design hierarchy:
-		Caching library 'worklib' ....... Done
-	Top level design units:
-		filter_top_tb
-xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
-	Building instance overlay tables: .................... Done
-	Building instance specific data structures.
-	Loading native compiled code:     .................... Done
-	Design hierarchy summary:
-		               Instances  Unique
-		Modules:              36       5
-		Registers:           218      63
-		Scalar wires:         12       -
-		Vectored wires:      530       -
-		Always blocks:        72      10
-		Initial blocks:        3       3
-		Cont. assignments:   385       2
-		Pseudo assignments:  115      22
-	Writing initial simulation snapshot: worklib.filter_top_tb:sv
-Loading snapshot worklib.filter_top_tb:sv .................... Done
+	-gui
+	-top fir_tb
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
 xcelium> source /opt/cadence/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm fir_tb.DUT.Clk fir_tb.DUT.Din fir_tb.DUT.Dout fir_tb.DUT.Reset fir_tb.DUT.coefficients_r fir_tb.DUT.din_r fir_tb.DUT.i fir_tb.DUT.j fir_tb.DUT.l fir_tb.DUT.load fir_tb.DUT.product_c fir_tb.DUT.read_address fir_tb.DUT.read_value fir_tb.DUT.sum_r fir_tb.DUT.write_address fir_tb.DUT.write_value
+Created probe 1
 xcelium> run
 Din 2048 Dout    0 chkDout    0 OK 1
 Din 2219 Dout 4093 chkDout 4093 OK 1
@@ -2087,7 +2068,8 @@ Din 1432 Dout 3149 chkDout 3149 OK 1
 Din 1368 Dout 3134 chkDout 3134 OK 1
 Din 1298 Dout 3103 chkDout 3103 OK 1
 TESTBENCH PASSES
-Simulation complete via $finish(1) at time 38735 NS + 1
-./filter_top_tb.sv:133   $finish;
+Simulation complete via $finish(1) at time 20845 NS + 0
+./fir_tb.sv:116   $finish;
+xcelium> ^C
 xcelium> exit
-TOOL:	xrun	22.09-s011: Exiting on Dec 04, 2023 at 18:17:41 EST  (total: 00:00:00)
+TOOL:	xrun	22.09-s011: Exiting on Dec 06, 2023 at 22:48:18 EST  (total: 00:05:55)

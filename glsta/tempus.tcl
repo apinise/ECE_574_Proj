@@ -1,7 +1,7 @@
 read_lib /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib
 
 read_verilog ../layout/out/design.v
-set_top_module filter_top
+set_top_module fir_transpose
 
 read_sdc ../layout/out/design.sdc
 read_sdf ../layout/out/design.sdf

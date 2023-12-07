@@ -35,7 +35,7 @@ integer       fcoeff, t;
 
 fir_transpose DUT(
   .Clk(clk),
-  .Hlt(reset),
+  .Reset(reset),
   .Din(din),
   .Dout(dout),
   .write_address(write_address),
@@ -71,13 +71,17 @@ initial begin
 	start = 0;
 	testbench_pass = 1;
   chkDout_r = 0;
-  
+  reset = 0;
+  @(posedge clk);
+  @(posedge clk);
 	reset = 1;
+  @(posedge clk);
+  reset = 0;
   
   while (!$feof(fcoeff))
     begin
       t = $fscanf(fcoeff, "%d\n", write_value);
-      #5;
+      @(posedge clk);
       write_address = write_address + 1;
     end
   

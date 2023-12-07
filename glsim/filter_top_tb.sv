@@ -16,7 +16,7 @@ logic MOSI;
 logic MISO; 
 
 
-logic [6:0] count; 
+logic [4:0] count; 
 logic [31:0] mess; 
 logic [31:0] rands; 
 
@@ -48,7 +48,7 @@ integer       fcoeff, t;
 //////////////////////   Instantiations   //////////////////////
 ////////////////////////////////////////////////////////////////
 
-filter_top DUT (
+filter_top dut (
   .Clk(SCK),
   .Hlt(reset),
   .Din(din),
@@ -62,7 +62,7 @@ filter_top DUT (
 `ifdef USE_SDF
       initial
 	begin
-	   $sdf_annotate("../layout/out/design.sdf",filter_top_tb.DUT,,"sdf.log","MAXIMUM");
+	   $sdf_annotate("../layout/out/design.sdf",filter_top_tb.dut,,"sdf.log","MAXIMUM");
 	end
 `endif
 ////////////////////////////////////////////////////////////////

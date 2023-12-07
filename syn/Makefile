@@ -7,6 +7,14 @@ syn:
 		TIMINGLIB=fast_vdd1v2_basicCells.lib \
 		VERILOG='../rtl/filter_top.sv ../rtl/SPI.sv ../rtl/fir_transpose.sv ../rtl/mult12x12.sv' \
 		genus -f genus_script.tcl
+   
+syn_fir:
+	BASENAME=fir \
+		CLOCKPERIOD=2 \
+		TIMINGPATH=/opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing \
+		TIMINGLIB=fast_vdd1v2_basicCells.lib \
+		VERILOG='../rtl/fir_transpose.sv ../rtl/mult12x12.sv' \
+		genus -f genus_script.tcl
 
 syn_cds130:
 	BASENAME=cds130 \

@@ -5,11 +5,9 @@
 -XLMODE
 ./xcelium.d/run.lnx86.22.09.d
 -RUNMODE
-../rtl/SPI.sv
-../rtl/filter_top.sv
 ../rtl/fir_transpose.sv
 ../rtl/mult12x12.sv
-filter_top_tb.sv
+fir_tb.sv
 -CDSLIB
 ./xcelium.d/run.lnx86.22.09.d/cdsrun.lib
 -HDLVAR

@@ -1,0 +1,332 @@
+
+#
+# Preferences
+#
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set plugin-enable-groupscope 0
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+preferences set savedlg-simulator ppe
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Design Browser windows
+#
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 1081x959+261+33}] != ""} {
+    window geometry "Design Browser 1" 1081x959+261+33
+}
+window target "Design Browser 1" on
+browser using {Design Browser 1}
+browser set -scope  simulator::filter_top_tb.dut 
+browser set \
+    -signalsort name
+browser yview see  simulator::filter_top_tb.dut 
+browser timecontrol set -lock 0
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x1017+0+23}] != ""} {
+    window geometry "Waveform 1" 1920x1017+0+23
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar visibility partial
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 175 \
+    -units ps \
+    -valuewidth 75
+waveform baseline set -time 0
+
+set id [waveform add -signals  {
+	simulator::filter_top_tb.CS
+	} ]
+set id [waveform add -signals  {
+	simulator::filter_top_tb.MISO
+	} ]
+set id [waveform add -signals  {
+	simulator::filter_top_tb.MOSI
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.Packet[0:31]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.Packet_read[0:31]}
+	} ]
+set id [waveform add -signals  {
+	simulator::filter_top_tb.SCK
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.chkDout[11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.chkDout_r[11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.count[4:0]}
+	} ]
+waveform hierarchy collapse $id
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.din[11:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::filter_top_tb.done
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dout[11:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::filter_top_tb.fcoeff
+	} ]
+set id [waveform add -signals  {
+	simulator::filter_top_tb.fileHandle
+	} ]
+set id [waveform add -signals  {
+	simulator::filter_top_tb.fvectors
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.mess[31:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::filter_top_tb.packet_string
+	} ]
+set id [waveform add -signals  {
+	simulator::filter_top_tb.r
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.rands[31:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::filter_top_tb.reset
+	} ]
+set id [waveform add -signals  {
+	simulator::filter_top_tb.start
+	} ]
+set id [waveform add -signals  {
+	simulator::filter_top_tb.t
+	} ]
+set id [waveform add -signals  {
+	simulator::filter_top_tb.test_pass
+	} ]
+set id [waveform add -signals  {
+	simulator::filter_top_tb.testbench_pass
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[30] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[29] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[28] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[27] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[26] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[25] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[24] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[23] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[22] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[21] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[20] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[19] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[18] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[17] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[16] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[15] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[14] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[13] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[12] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[11] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[10] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[9] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[8] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[7] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[6] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[5] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[4] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[3] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[2] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[1] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_sum_r[0] [23:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[31] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[0] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[1] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[2] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[3] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[4] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[5] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[6] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[7] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[8] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[9] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[10] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[11] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[12] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[13] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[14] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[15] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[16] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[17] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[18] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[19] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[20] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[21] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[22] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[23] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[24] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[25] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[26] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[27] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[28] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[29] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[30] [11:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::filter_top_tb.dut.\fir_filter_coefficients_r[31] [11:0]}
+	} ]
+
+waveform xview limits 0 38735000ps
+
+#
+# Waveform Window Links
+#
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 730x250+261+564
+
+#
+# Layout selection
+#
