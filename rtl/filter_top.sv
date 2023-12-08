@@ -1,7 +1,7 @@
 module filter_top (
   // FIR Filter Nets
   input   logic         Clk,
-  input   logic         Hlt,
+  input   logic         Reset,
   input   logic [11:0]  Din,
   output  logic [11:0]  Dout,
   // SPI Nets
@@ -31,7 +31,7 @@ logic         load;
 
 fir_transpose fir_filter (
   .Clk(Clk),
-  .Hlt(Hlt),
+  .Reset(Reset),
   .Din(Din),
   .Dout(Dout),
   .write_address(register_address),
@@ -45,6 +45,7 @@ SPI spi (
   .SCK(SCK),
   .CS(CS),
   .MOSI(MOSI),
+  .Reset(Reset),
   .MISO(MISO),
   .load(load),
   .register_address(register_address),
@@ -64,7 +65,7 @@ SPI spi (
 /*
 filter_top DUT (
   .Clk(),
-  .Hlt(),
+  .Reset(),
   .Din(),
   .Dout(),
   .SCK(),

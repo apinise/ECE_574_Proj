@@ -1,23 +1,67 @@
 xrun: 22.09-s011: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun	22.09-s011: Started on Dec 06, 2023 at 22:42:23 EST
+TOOL:	xrun	22.09-s011: Started on Dec 07, 2023 at 18:28:46 EST
 xrun
+	../rtl/SPI.sv
+	../rtl/filter_top.sv
 	../rtl/fir_transpose.sv
 	../rtl/mult12x12.sv
-	fir_tb.sv
+	filter_top_tb.sv
 	-access +rwc
-	-gui
-	-top fir_tb
-xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+	-top filter_top_tb
+file: ../rtl/SPI.sv
+	module worklib.SPI:sv
+		errors: 0, warnings: 0
+file: ../rtl/filter_top.sv
+	module worklib.filter_top:sv
+		errors: 0, warnings: 0
+file: ../rtl/fir_transpose.sv
+	module worklib.fir_transpose:sv
+		errors: 0, warnings: 0
+file: ../rtl/mult12x12.sv
+	module worklib.mult12x12:sv
+		errors: 0, warnings: 0
+file: filter_top_tb.sv
+		$fscanf(fileHandle, "%s\n", packet_string);
+		      |
+xmvlog: *W,NOSYST (filter_top_tb.sv,91|8): System function '$fscanf' invoked as a task. Return value will be ignored.
+		$sscanf(packet_string, "%b", Packet[k]);
+		      |
+xmvlog: *W,NOSYST (filter_top_tb.sv,92|8): System function '$sscanf' invoked as a task. Return value will be ignored.
+	module worklib.filter_top_tb:sv
+		errors: 0, warnings: 2
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		filter_top_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.SPI:sv <0x1c71a9fc>
+			streams:  18, words:  7032
+		worklib.filter_top:sv <0x1eaf6459>
+			streams:  12, words:  2821
+		worklib.filter_top_tb:sv <0x629c1714>
+			streams:  16, words: 12979
+		worklib.fir_transpose:sv <0x79f39024>
+			streams:  47, words: 37288
+		worklib.mult12x12:sv <0x3127318c>
+			streams:   3, words:  2925
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		               Instances  Unique
+		Modules:              36       5
+		Registers:           219      64
+		Scalar wires:         12       -
+		Vectored wires:      530       -
+		Always blocks:        72      10
+		Initial blocks:        1       1
+		Cont. assignments:   385       2
+		Pseudo assignments:  115      22
+	Writing initial simulation snapshot: worklib.filter_top_tb:sv
+Loading snapshot worklib.filter_top_tb:sv .................... Done
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
-
--------------------------------------
-Relinquished control to SimVision...
-xcelium> 
 xcelium> source /opt/cadence/XCELIUM2209/tools/xcelium/files/xmsimrc
-xcelium> database -open waves -into waves.shm -default
-Created default SHM database waves
-xcelium> probe -create -shm fir_tb.DUT.Clk fir_tb.DUT.Din fir_tb.DUT.Dout fir_tb.DUT.Reset fir_tb.DUT.coefficients_r fir_tb.DUT.din_r fir_tb.DUT.i fir_tb.DUT.j fir_tb.DUT.l fir_tb.DUT.load fir_tb.DUT.product_c fir_tb.DUT.read_address fir_tb.DUT.read_value fir_tb.DUT.sum_r fir_tb.DUT.write_address fir_tb.DUT.write_value
-Created probe 1
 xcelium> run
 Din 2048 Dout    0 chkDout    0 OK 1
 Din 2219 Dout 4093 chkDout 4093 OK 1
@@ -2068,8 +2112,7 @@ Din 1432 Dout 3149 chkDout 3149 OK 1
 Din 1368 Dout 3134 chkDout 3134 OK 1
 Din 1298 Dout 3103 chkDout 3103 OK 1
 TESTBENCH PASSES
-Simulation complete via $finish(1) at time 20845 NS + 0
-./fir_tb.sv:116   $finish;
-xcelium> ^C
+Simulation complete via $finish(1) at time 38765 NS + 1
+./filter_top_tb.sv:137   $finish;
 xcelium> exit
-TOOL:	xrun	22.09-s011: Exiting on Dec 06, 2023 at 22:48:18 EST  (total: 00:05:55)
+TOOL:	xrun	22.09-s011: Exiting on Dec 07, 2023 at 18:28:47 EST  (total: 00:00:01)

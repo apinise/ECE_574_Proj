@@ -42,7 +42,7 @@ catch {setNanoRouteMode -quiet -routeReInsertFillerCellList "FILL64 FILL32 FILL1
 catch {setNanoRouteMode -quiet -routeReInsertFillerCellListFromFile false}
 catch {setNanoRouteMode -quiet -routeStrictlyHonorNonDefaultRule "false"}
 catch {setNanoRouteMode -quiet -routeWithSiPostRouteFix false}
-catch {setNanoRouteMode -quiet -timingEngine ".timing_file_8926.tif.gz"}
+catch {setNanoRouteMode -quiet -timingEngine ".timing_file_31472.tif.gz"}
 
 catch { setPlaceMode -place_global_reorder_scan false }
 catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepInstInSdc false -keepFlatten true }

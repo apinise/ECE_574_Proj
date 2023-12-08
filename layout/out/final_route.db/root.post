@@ -38,6 +38,8 @@
 ::db::check_and_set_root_attr route_design_extract_third_party_compatible false
 ::db::check_and_set_root_attr route_design_global_exp_timing_driven_std_delay 9.9
 ::db::check_and_set_root_attr route_design_global_exp_timing_driven_use_tif_timing_engine_for_import_design false
+::db::check_and_set_root_attr route_design_re_insert_filler_cell_list {FILL64 FILL32 FILL16 FILL8 FILL4 FILL2 FILL1}
+::db::check_and_set_root_attr route_design_re_insert_filler_cell_list_from_file false
 ::db::check_and_set_root_attr route_design_strict_honor_route_rule false
 ::db::check_and_set_root_attr route_design_with_si_post_route_fix false
 ::db::check_and_set_root_attr route_early_global_secondary_pg false

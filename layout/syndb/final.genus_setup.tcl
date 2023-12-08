@@ -2,7 +2,7 @@
 #
 # Genus(TM) Synthesis Solution setup file
 # Created by Genus(TM) Synthesis Solution 21.18-s082_1
-#   on 12/06/2023 23:17:50
+#   on 12/07/2023 19:07:13
 #
 # This file can only be run in Genus Common UI mode.
 #
@@ -14,9 +14,9 @@
 
 # Remove Existing Design
 ################################################################################
-if {[::legacy::find -design design:fir_transpose] ne ""} {
+if {[::legacy::find -design design:filter_top] ne ""} {
   puts "** A design with the same name is already loaded. It will be removed. **"
-  delete_obj design:fir_transpose
+  delete_obj design:filter_top
 }
 
 
@@ -45,20 +45,20 @@ if {"[string_representation [::legacy::get_attribute startup_license /]]" != "Ge
    mesg_send [::legacy::find -message /messages/PHYS/PHYS-91] "golden license: Genus_Synthesis  current license: [string_representation [::legacy::get_attribute startup_license /]]"
 }
 # slack
-set _slk_ [::legacy::get_attribute slack design:fir_transpose]
+set _slk_ [::legacy::get_attribute slack design:filter_top]
 if {[regexp {^-?[0-9.]+$} $_slk_]} {
   set _slk_ [format %.1f $_slk_]
 }
-if {$_slk_ != "334.7"} {
-   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden slack: 334.7,  current slack: $_slk_"
+if {$_slk_ != "320.7"} {
+   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden slack: 320.7,  current slack: $_slk_"
 }
 unset _slk_
 # multi-mode slack
-if {"[string_representation [::legacy::get_attribute slack_by_mode design:fir_transpose]]" != "{{mode:fir_transpose/func_default 334.7}}"} {
-   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden slack_by_mode: {{mode:fir_transpose/func_default 334.7}}  current slack_by_mode: [string_representation [::legacy::get_attribute slack_by_mode design:fir_transpose]]"
+if {"[string_representation [::legacy::get_attribute slack_by_mode design:filter_top]]" != "{{mode:filter_top/func_default 320.7}}"} {
+   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden slack_by_mode: {{mode:filter_top/func_default 320.7}}  current slack_by_mode: [string_representation [::legacy::get_attribute slack_by_mode design:filter_top]]"
 }
 # tns
-set _tns_ [::legacy::get_attribute tns design:fir_transpose]
+set _tns_ [::legacy::get_attribute tns design:filter_top]
 if {[regexp {^-?[0-9.]+$} $_tns_]} {
   set _tns_ [format %.0f $_tns_]
 }
@@ -67,21 +67,21 @@ if {$_tns_ != "0"} {
 }
 unset _tns_
 # cell area
-set _cell_area_ [::legacy::get_attribute cell_area design:fir_transpose]
+set _cell_area_ [::legacy::get_attribute cell_area design:filter_top]
 if {[regexp {^-?[0-9.]+$} $_cell_area_]} {
   set _cell_area_ [format %.0f $_cell_area_]
 }
-if {$_cell_area_ != "67884"} {
-   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden cell area: 67884,  current cell area: $_cell_area_"
+if {$_cell_area_ != "68804"} {
+   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden cell area: 68804,  current cell area: $_cell_area_"
 }
 unset _cell_area_
 # net area
-set _net_area_ [::legacy::get_attribute net_area design:fir_transpose]
+set _net_area_ [::legacy::get_attribute net_area design:filter_top]
 if {[regexp {^-?[0-9.]+$} $_net_area_]} {
   set _net_area_ [format %.0f $_net_area_]
 }
-if {$_net_area_ != "32672"} {
-   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden net area: 32672,  current net area: $_net_area_"
+if {$_net_area_ != "32872"} {
+   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden net area: 32872,  current net area: $_net_area_"
 }
 unset _net_area_
 # library domain count

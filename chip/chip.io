@@ -7,7 +7,7 @@
     (top
     )
     (left
-        (pin name="Hlt"     layer=3 width=0.5 depth=0.5 skip=10 )
+        (pin name="Reset"     layer=3 width=0.5 depth=0.5 skip=10 )
         (pin name="Clk"     layer=3 width=0.5 depth=0.5 )
         (pin name="SCK"     layer=3 width=0.5 depth=0.5 )
         (pin name="CS"      layer=3 width=0.5 depth=0.5 )

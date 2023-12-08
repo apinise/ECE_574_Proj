@@ -2,7 +2,7 @@ all: syn
 
 syn:
 	BASENAME=cdf45 \
-		CLOCKPERIOD=10 \
+		CLOCKPERIOD=2 \
 		TIMINGPATH=/opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing \
 		TIMINGLIB=fast_vdd1v2_basicCells.lib \
 		VERILOG='../rtl/filter_top.sv ../rtl/SPI.sv ../rtl/fir_transpose.sv ../rtl/mult12x12.sv' \

@@ -50,7 +50,7 @@ integer       fcoeff, t;
 
 filter_top DUT (
   .Clk(SCK),
-  .Hlt(reset),
+  .Reset(reset),
   .Din(din),
   .Dout(dout),
   .SCK(SCK),
@@ -77,7 +77,13 @@ initial begin
 	start = 0;
 	testbench_pass = 1;
   chkDout_r = 0;
+  reset = 0;
+  @(posedge SCK);
   reset = 1;
+  @(posedge SCK);
+  @(posedge SCK);
+  reset = 0;
+  @(posedge SCK);
   
 	
     fileHandle = $fopen("../refC/packets.txt", "r");
@@ -107,9 +113,7 @@ initial begin
   end
 
 	@(posedge SCK);
-  #7;
   @(posedge SCK);
-	reset = 0;
   
 	while (!$feof(fvectors))
 	  begin

@@ -2,6 +2,8 @@
 // File created by:  xrun
 // Do not modify this file
 //
+/home/ebapinis/ECE_574_Proj/rtl/SPI.sv
+/home/ebapinis/ECE_574_Proj/rtl/filter_top.sv
 /home/ebapinis/ECE_574_Proj/rtl/fir_transpose.sv
 /home/ebapinis/ECE_574_Proj/rtl/mult12x12.sv
-/home/ebapinis/ECE_574_Proj/sim/fir_tb.sv
+/home/ebapinis/ECE_574_Proj/sim/filter_top_tb.sv

@@ -5,7 +5,7 @@
 -XLMODE
 ./xcelium.d/run.lnx86.22.09.d
 -RUNMODE
-fir_tb.sv
+filter_top_tb.sv
 ../layout/out/design.v
 /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/verilog/fast_vdd1v2_basicCells.v
 -DEFINE

@@ -29,6 +29,7 @@ logic [31:0] Packet[32];
 logic [31:0] Packet_read[32];
 
 // FIR Nets
+logic clk;
 logic reset;
 
 logic start;
@@ -39,7 +40,7 @@ logic [11:0]  dout;
 
 
 
-logic [11:0]  chkDout, chkDout_r;
+logic [11:0]  chkDout, chkDout_r, chkDout_r2;
 logic 	      testbench_pass;
 integer       fvectors, r;
 integer       fcoeff, t;
@@ -49,8 +50,8 @@ integer       fcoeff, t;
 ////////////////////////////////////////////////////////////////
 
 filter_top dut (
-  .Clk(SCK),
-  .Hlt(reset),
+  .Clk(clk),
+  .Reset(reset),
   .Din(din),
   .Dout(dout),
   .SCK(SCK),
@@ -70,7 +71,11 @@ filter_top dut (
 ////////////////////////////////////////////////////////////////
 
 always begin 
-	#5 SCK <= ~SCK;
+	#100 SCK <= ~SCK;
+end
+
+always begin
+  #2 clk <= ~clk;
 end
 
 initial begin 
@@ -83,7 +88,17 @@ initial begin
 	start = 0;
 	testbench_pass = 1;
   chkDout_r = 0;
+  chkDout_r2 = 0;
+  reset = 0;
+  clk <= 0;
+  @(posedge clk);
+  @(posedge clk)
   reset = 1;
+  @(posedge clk);
+  @(posedge clk);
+  @(posedge clk);
+  reset = 0;
+  @(posedge clk);
   
 	
     fileHandle = $fopen("../refC/packets.txt", "r");
@@ -99,9 +114,9 @@ initial begin
         //mess = {8'hFB, rands[23:0]};
 		mess = Packet[i];
         count = 7'd31;
-        #30;
+        #600;
         CS = 1'b0;
-        #540;
+        #10800;
         CS = 1'b1;
     end
     
@@ -112,21 +127,20 @@ initial begin
      $finish;
   end
 
-	@(posedge SCK);
-  #7;
-  @(posedge SCK);
-	reset = 0;
+	@(posedge clk);
+  @(posedge clk);
   
 	while (!$feof(fvectors))
 	  begin
 	     r = $fscanf(fvectors,"%d %d\n", din, chkDout);
        
-	     @(posedge SCK);
+	     @(posedge clk);
        
        chkDout_r <= chkDout;
+       chkDout_r2 <= chkDout_r;
        
-       $display("Din %d Dout %d chkDout %d OK %b", din, dout, chkDout_r, (dout == chkDout_r));
-	     testbench_pass = testbench_pass && (dout == chkDout_r);	     
+       $display("Din %d Dout %d chkDout %d OK %b", din, dout, chkDout_r2, (dout == chkDout_r2));
+	     testbench_pass = testbench_pass && (dout == chkDout_r2);	     
 	  end
 
 	$fclose(fvectors);

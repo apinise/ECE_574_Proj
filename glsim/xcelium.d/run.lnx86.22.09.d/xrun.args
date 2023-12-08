@@ -2,7 +2,7 @@
 // File created by:  xrun
 // Do not modify this file
 //
-fir_tb.sv
+filter_top_tb.sv
 -timescale
 1ns/1ps
 ../layout/out/design.v
@@ -12,4 +12,4 @@ USE_SDF
 -access
 +rwc
 -top
-fir_tb
+filter_top_tb

@@ -1,6 +1,6 @@
 # ####################################################################
 
-#  Created by Genus(TM) Synthesis Solution 21.18-s082_1 on Mon Dec 04 18:31:41 EST 2023
+#  Created by Genus(TM) Synthesis Solution 21.18-s082_1 on Thu Dec 07 18:45:23 EST 2023
 
 # ####################################################################
 
@@ -12,9 +12,9 @@ set_units -time 1000ps
 # Set the current design
 current_design filter_top
 
-create_clock -name "Clk" -period 10.0 -waveform {0.0 5.0} [get_ports Clk]
+create_clock -name "Clk" -period 2.0 -waveform {0.0 1.0} [get_ports Clk]
 set_clock_gating_check -setup 0.0 
-set_input_delay -clock [get_clocks Clk] -add_delay 0.0 [get_ports Hlt]
+set_input_delay -clock [get_clocks Clk] -add_delay 0.0 [get_ports Reset]
 set_input_delay -clock [get_clocks Clk] -add_delay 0.0 [get_ports {Din[11]}]
 set_input_delay -clock [get_clocks Clk] -add_delay 0.0 [get_ports {Din[10]}]
 set_input_delay -clock [get_clocks Clk] -add_delay 0.0 [get_ports {Din[9]}]

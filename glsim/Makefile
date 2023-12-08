@@ -4,7 +4,7 @@ sim:
 	../layout/out/design.v \
 	/opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/verilog/fast_vdd1v2_basicCells.v \
 	-define USE_SDF \
-	-access +rwc -gui \
+	-access +rwc \
 	-top filter_top_tb
  
 sim_fir:

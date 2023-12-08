@@ -4,27 +4,27 @@ Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
 
 Version:	v22.10-p001_1, built Tue Aug 9 17:51:02 PDT 2022
 Options:	-files tempus.tcl 
-Date:		Wed Dec  6 23:40:40 2023
+Date:		Thu Dec  7 18:23:40 2023
 Host:		arc-schaumont-class-vm (x86_64 w/Linux 3.10.0-1160.99.1.el7.x86_64) (1core*4cpus*Intel Xeon Processor (Cascadelake) 16384KB)
 OS:		Red Hat Enterprise Linux Server release 7.9 (Maipo)
 
 License:
-		[23:40:40.456041] Configured Lic search path (21.01-s002): 5280@arclic02.wpi.edu
+		[18:23:40.456081] Configured Lic search path (21.01-s002): 5280@arclic02.wpi.edu
 
 		tpsxl	Tempus Timing Signoff Solution XL	22.1	checkout succeeded
 		16 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
 Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
-environment variable TMPDIR is '/tmp/ssv_tmpdir_7478_NmDtjZ'.
+environment variable TMPDIR is '/tmp/ssv_tmpdir_15173_lkxBc9'.
 #@ Processing -files option
 Sourcing tcl/tk file 'tempus.tcl' ...
 <CMD> read_lib /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib
 <CMD> read_verilog ../layout/out/design.v
 <CMD> set_top_module filter_top
-#% Begin Load MMMC data ... (date=12/06 23:41:11, mem=966.9M)
+#% Begin Load MMMC data ... (date=12/07 18:24:01, mem=963.6M)
 Number of views requested 1 are allowed with the current licenses... continuing with set_analysis_view.
-#% End Load MMMC data ... (date=12/06 23:41:11, total cpu=0:00:00.0, real=0:00:00.0, peak res=966.9M, current mem=966.8M)
+#% End Load MMMC data ... (date=12/07 18:24:01, total cpu=0:00:00.0, real=0:00:00.0, peak res=963.6M, current mem=963.6M)
 default_emulate_early_rc_corner default_emulate_late_rc_corner default_emulate_rc_corner
-Loading view definition file from .ssv_emulate_view_definition_7478.tcl
+Loading view definition file from .ssv_emulate_view_definition_15173.tcl
 Reading default_emulate_libset_max timing library '/opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib' ...
 **WARN: (TECHLIB-302):	No function defined for cell 'DECAP9'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
 **WARN: (TECHLIB-302):	No function defined for cell 'DECAP8'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
@@ -37,27 +37,155 @@ Reading default_emulate_libset_max timing library '/opt/cadence/libraries/gsclib
 **WARN: (TECHLIB-302):	No function defined for cell 'DECAP10'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
 **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing/fast_vdd1v2_basicCells.lib)
 Read 489 cells in library 'fast_vdd1v2' 
-*** End library_loading (cpu=0.01min, real=0.02min, mem=14.5M, fe_cpu=0.35min, fe_real=0.53min, fe_mem=1153.8M) ***
-#% Begin Load netlist data ... (date=12/06 23:41:12, mem=974.6M)
+*** End library_loading (cpu=0.01min, real=0.02min, mem=22.5M, fe_cpu=0.35min, fe_real=0.37min, fe_mem=1153.8M) ***
+#% Begin Load netlist data ... (date=12/07 18:24:02, mem=974.4M)
 *** Begin netlist parsing (mem=1153.8M) ***
 Reading verilog netlist '../layout/out/design.v'
 
-*** Memory Usage v#1 (Current mem = 1317.812M, initial mem = 523.699M) ***
-*** End netlist parsing (cpu=0:00:00.2, real=0:00:00.0, mem=1317.8M) ***
-#% End Load netlist data ... (date=12/06 23:41:12, total cpu=0:00:00.6, real=0:00:01.0, peak res=1091.3M, current mem=1081.0M)
-**ERROR: (IMPSYC-300):	Cell filter_top not found.
-**ERROR: (IMPVL-904):	Can't set top cell to "filter_top" because it does not exist.  Exiting!
-**INFO (INTERRUPT): The current script will stop before next command.
-**INFO (INTERRUPT): One more Ctrl-C to exit Tempus Timing Signoff Solution ...
-Tempus Timing Signoff Solution terminated by user interrupt.
+*** Memory Usage v#1 (Current mem = 1341.812M, initial mem = 523.699M) ***
+*** End netlist parsing (cpu=0:00:00.2, real=0:00:00.0, mem=1341.8M) ***
+#% End Load netlist data ... (date=12/07 18:24:02, total cpu=0:00:00.6, real=0:00:00.0, peak res=1115.2M, current mem=1105.0M)
+Set top cell to filter_top.
+Starting consistency checks on late and early library sets of delay corner 'default_emulate_delay_corner'
+late library set: default_emulate_libset_max
+early library set: default_emulate_libset_min
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'default_emulate_delay_corner'
+late library set: default_emulate_libset_max
+early library set: default_emulate_libset_min
+Completed consistency checks. Status: Successful
+Building hierarchical netlist for Cell filter_top ...
+***** UseNewTieNetMode *****.
+*** Netlist is unique.
+** info: there are 492 modules.
+** info: there are 23817 stdCell insts.
+** info: there are 1 Pad insts.
 
-*** Memory Usage v#1 (Current mem = 1308.832M, initial mem = 523.699M) ***
+*** Memory Usage v#1 (Current mem = 1705.270M, initial mem = 523.699M) ***
+Set Default Input Pin Transition as 0.1 ps.
+/dev/null
+Extraction setup Started 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: default_emulate_view
+    RC-Corner Name        : default_emulate_rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PostRoute Res Factor        : 1
+    RC-Corner PostRoute Cap Factor        : 1
+    RC-Corner PostRoute XCap Factor       : 1
+Starting consistency checks on late and early library sets of delay corner 'default_emulate_delay_corner'
+late library set: default_emulate_libset_max
+early library set: default_emulate_libset_min
+Completed consistency checks. Status: Successful
+Reading timing constraints file '/dev/null' ...
+Current (total cpu=0:00:23.0, real=0:00:24.0, peak res=1722.6M, current mem=1722.6M)
+Total number of combinational cells: 314
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX12 BUFX16 BUFX2 BUFX20 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX2 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX12 CLKINVX16 CLKINVX2 CLKINVX20 CLKINVX3 CLKINVX4 CLKINVX6 CLKINVX8 INVX1 INVX12 INVX16 INVX2 INVX20 INVX3 INVX4 INVX6 INVXL INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X4 DLY4X1
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+default_emulate_constraint_mode
+Extraction setup Started 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: default_emulate_view
+    RC-Corner Name        : default_emulate_rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 0 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PostRoute Res Factor        : 1
+    RC-Corner PostRoute Cap Factor        : 1
+    RC-Corner PostRoute XCap Factor       : 1
+Extraction setup Started 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: default_emulate_view
+    RC-Corner Name        : default_emulate_rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 0 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PostRoute Res Factor        : 1
+    RC-Corner PostRoute Cap Factor        : 1
+    RC-Corner PostRoute XCap Factor       : 1
+Extraction setup Started 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: default_emulate_view
+    RC-Corner Name        : default_emulate_rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 0 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PostRoute Res Factor        : 1
+    RC-Corner PostRoute Cap Factor        : 1
+    RC-Corner PostRoute XCap Factor       : 1
+default_emulate_libset_max default_emulate_libset_min
+<CMD> read_sdc ../layout/out/design.sdc
+Current (total cpu=0:00:23.5, real=0:00:24.0, peak res=1753.2M, current mem=1687.5M)
+filter_top
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1692.3M, current mem=1692.3M)
+Current (total cpu=0:00:23.6, real=0:00:24.0, peak res=1753.2M, current mem=1692.3M)
+<CMD> read_sdf ../layout/out/design.sdf
+default_emulate_view
+default_emulate_view
+<CMD> read_spef ../layout/out/design_default_rc.spef
+
+SPEF files for RC Corner default_emulate_rc_corner:
+Top-level spef file '../layout/out/design_default_rc.spef'.
+Start spef parsing (MEM=2017.28).
+SPEF file ../layout/out/design_default_rc.spef.
+Number of Resistors     : 152348
+Number of Ground Caps   : 149817
+Number of Coupling Caps : 31064
+
+End spef parsing (MEM=2062.28 CPU=0:00:02.1 REAL=0:00:01.0).
+87 nets are missing in SPEF file. The names of these nets are saved in ./default_emulate_rc_corner.missing_nets.rpt.
+<CMD> report_timing -late -max_paths 3 > late.rpt
+AAE_INFO: opIsDesignInPostRouteState() is 0
+AAE DB initialization (MEM=2081.18 CPU=0:00:00.0 REAL=0:00:00.0) 
+#################################################################################
+# Design Name: filter_top
+# Design Mode: 65nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Start delay calculation (fullDC) (1 T). (MEM=1939.2)
+/dev/null
+End delay calculation. (MEM=2143.36 CPU=0:00:05.6 REAL=0:00:05.0)
+End delay calculation (fullDC). (MEM=2135.36 CPU=0:00:06.1 REAL=0:00:06.0)
+<CMD> report_timing -early -max_paths 3 > early.rpt
+<CMD> report_timing  -from [all_inputs] -to [all_outputs] -max_paths 16 -path_type summary  > allpaths.rpt
+<CMD> report_timing  -from [all_inputs] -to [all_registers] -max_paths 16 -path_type summary  >> allpaths.rpt
+<CMD> report_timing  -from [all_registers] -to [all_registers] -max_paths 16 -path_type summary >> allpaths.rpt
+<CMD> report_timing  -from [all_registers] -to [all_outputs] -max_paths 16 -path_type summary >> allpaths.rpt
+<CMD> exit
+
+*** Memory Usage v#1 (Current mem = 2064.145M, initial mem = 523.699M) ***
 
 *** Summary of all messages that are not suppressed in this session:
 Severity  ID               Count  Summary                                  
-ERROR     IMPSYC-300           1  Cell %s not found.                       
-ERROR     IMPVL-904            2  Can't set top cell to "%s" because it do...
 WARNING   TECHLIB-302         10  No function defined for cell '%s'. The c...
-*** Message Summary: 10 warning(s), 3 error(s)
+*** Message Summary: 10 warning(s), 0 error(s)
 
---- Ending "Tempus Timing Signoff Solution" (totcpu=0:00:25.1, real=0:01:09, mem=1308.8M) ---
+--- Ending "Tempus Timing Signoff Solution" (totcpu=0:00:35.1, real=0:00:35.0, mem=2064.1M) ---

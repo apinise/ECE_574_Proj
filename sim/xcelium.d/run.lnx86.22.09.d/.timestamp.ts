@@ -1,11 +1,5 @@
-1701724901 /home/kpano/ECE_574_Proj/rtl/fir_transpose.sv
-1701731325 /home/kpano/ECE_574_Proj/sim/filter_top_tb.sv
-1701731839 /home/ebapinis/ECE_574_Proj/rtl/filter_top.sv
+1701986814 /home/ebapinis/ECE_574_Proj/rtl/filter_top.sv
+1701979468 /home/ebapinis/ECE_574_Proj/sim/filter_top_tb.sv
 1701920511 /home/ebapinis/ECE_574_Proj/rtl/fir_transpose.sv
-1701731839 /home/ebapinis/ECE_574_Proj/sim/filter_top_tb.sv
 1701460527 /home/ebapinis/ECE_574_Proj/rtl/mult12x12.sv
-1701656877 /home/ebapinis/ECE_574_Proj/rtl/SPI.sv
-1701730362 /home/kpano/ECE_574_Proj/rtl/filter_top.sv
-1701920138 /home/ebapinis/ECE_574_Proj/sim/fir_tb.sv
-1701572472 /home/kpano/ECE_574_Proj/rtl/mult12x12.sv
-1701572653 /home/kpano/ECE_574_Proj/rtl/SPI.sv
+1701991323 /home/ebapinis/ECE_574_Proj/rtl/SPI.sv
