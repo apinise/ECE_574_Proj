@@ -1,0 +1,319 @@
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# User:    ebapinis (13961)
+
+[22:54:11.345498] Periodic Lic check successful
+[22:54:11.345506] Feature usage summary:
+[22:54:11.345507] Joules_RTL_Power
+Checking out license 'Joules_RTL_Power'...  (0 seconds elapsed).
+Sourced synth_init file
+Loading joules INI file: $env(RTLSCORE_ROOT)/config/joules.ini
+# Date:    Sun Dec 10 22:54:40 2023
+# User:    ebapinis (13961)
+# Host:    arc-schaumont-class-vm (x86_64 w/Linux 3.10.0-1160.99.1.el7.x86_64)
+# Config:  (1core*4cpus*4physical cpus*Intel Xeon Processor (Cascadelake) 16384KB) (16264132KB)
+# OS:      Red Hat Enterprise Linux Server release 7.9 (Maipo)
+# DISPLAY: localhost:12.0
+# CWD:     /home/ebapinis/ECE_574_Proj/glpower
+# Options: -files joules_script.tcl 
+# RTLSCORE_ROOT: /opt/cadence/JLS211/etc/rtls
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                                                                
+                    Welcome to Cadence RTLScore(R) Platform                     
+                                                                                
+                |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|                
+                |        ____.            .__                  |                
+                |       |    | ____  __ __|  |   ____   ______ |                
+                |       |    |/  _ \|  |  \  | _/ __ \ /  ___/ |                
+                |   /\__|    (  <_> )  |  /  |_\  ___/ \___ \  |                
+                |   \________|\____/|____/|____/\___  >____  > |                
+                |                                   \/     \/  |                
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                
+                          Cadence's RTL Power Product                           
+                  Version v21.18-s002_1 (Jul 25 2023 06:08:33)                  
+                                                                                
+   Copyright 2023 Cadence Design Systems, Inc. All rights reserved worldwide.   
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Getting started -
++ for product documentation (HTML or PDF), type: cdnshelp
++ for a list of available commands, type: help
++ for a list of all object types, type: get_attribute -help
++ to list all attributes by object type: get_attribute * <object_type> -help
++ to list all attributes for all object types: get_attribute * * -help
++ to list only writable attributes, use set_attribute instead of get_attribute
++ to view manhelp for a command, type: man <command_name>
+
+Email your feedback to: joules_feedback@cadence.com
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Joules Workdir = joules_work
+Joules Logfile = joules_work/joules.log
+Joules Cmdfile = joules_work/joules.cmd
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sourcing './joules_script.tcl' ...
+  Setting attribute of root '/': 'lib_search_path' = /opt/cadence/libraries/gsclib045_all_v4.7/gsclib045/timing
+Warning : This attribute will be obsolete in a next major release. [TUI-32]
+        : attribute: 'hdl_search_path', object type: 'root'
+        : Attribute 'hdl_search_path' is going to be obsoleted, use the new attribute 'init_hdl_search_path'.
+  Setting attribute of root '/': 'hdl_search_path' = ../syn/out
+
+Threads Configured:3
+
+  Message Summary for Library fast_vdd1v2_basicCells.lib:
+  *******************************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  *******************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.320000, 0.000000) in library 'fast_vdd1v2_basicCells.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP3' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP3' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP5' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP5' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP6' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP6' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP7' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP7' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP9' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP9' must have an output pin.
+  Setting attribute of root '/': 'library' = fast_vdd1v2_basicCells.lib
+Info: Bucketizing cells in library fast_vdd1v2
+Warning: LBSR-0001 Could not determine cell type for fast_vdd1v2/OAI2BB2X1
+Warning: LBSR-0001 Could not determine cell type for fast_vdd1v2/OAI2BB2X2
+Warning: LBSR-0001 Could not determine cell type for fast_vdd1v2/OAI2BB2X4
+Warning: LBSR-0001 Could not determine cell type for fast_vdd1v2/OAI2BB2XL
+  Done reading and elaborating the structural design 'filter_top'.
+Checking for analog nets...
+Check completed for analog nets.
+Checking for source RTL...
+Check completed for source RTL.
+Info: read_netlist command, skipping Auto infer of rtlstim2gate rules
+Info: Design state 'mapped': stitching rtlstim2gate... Done
+# Info: Building RTLScore cache for /filter_top
+# Info: 1. marking memories .. done.
+# Info: 2. marking sequentials .. done.
+# Info: 3. marking macros .. done.
+# Info: 4. caching sequentials, macros, .. done.
+# Info: Cache for /filter_top completed.
+Reading SDF file ../layout/synout/cdf45_delays.sdf
+Reading ../layout/out/design_default_rc.spef ...
+
+Annotating parasitics for design filter_top
+Warning : Annotated physical data will be ignored for timing analysis. [PHYS-256]
+        : Net 'fir_filter/CTS_12' has an ideal pin 'fir_filter/sum_r_reg[3][20]/CK (DFFRHQX1/CK)'.
+
+##### read_spef statistics #####
+Total number of nets: 31346
+Number of nets cannot be annotated: 0
+Number of nets with Full RC mode: 98
+Number of nets annotated, but ignored for timing 15
+Total runtime: 0.8 seconds
+Info   : STIM-0001 [StimInfo] read_stimulus effective options 
+       : -file : ../glsim/trace.vcd
+       : -dut_instance : /filter_top_tb/dut
+       : -format : vcd(auto determined)
+       : -frame_count : 999
+Info   : STIM-0005 [StimInfo] Frame based analysis is enabled.
+Info   : STIM-0001 Design top is filter_top
+Info   : STIM-0001 Started reading input stimulus file ../glsim/trace.vcd
+Info   : STIM-0001 Found top instance /filter_top_tb/dut
+Info   : STIM-0002 [StimInfo] Finished design hierarchy parsing.
+Info   : STIM-0010 [StimInfo] Total number of frames '999'
+Info   : STIM-0002 Started value change section parsing.
+Info   : STIM-0001 [StimInfo] Value Change Section Parsing Progress Report :   0%   1%   2%   3%   4%   5%   6%   7%   8%   9%  10%  11%  12%  13%  14%  15%  16%  17%  18%  19%  20%  21%  22%  23%  24%  25%  26%  27%  28%  29%  30%  31%  32%  33%  34%  35%  36%  37%  38%  39%  40%  41%  42%  43%  44%  45%  46%  47%  48%  49%  50%  51%  52%  53%  54%  55%  56%  57%  58%  59%  60%  61%  62%  63%  64%  65%  66%  67%  68%  69%  70%  71%  72%  73%  74%  75%  76%  77%  78%  79%  80%  81%  82%  83%  84%  85%  86%  87%  88%  89%  90%  91%  92%  93%  94%  95%  96%  97%  98%  99% 100%
+Info   : STIM-0012 [StimInfo] Simulation start = 0 ps, end = 467525000 ps.
+Info   : STIM-0002 Finished processing value changes, started storage.
+Info   : STIM-0002 Stimulus has been identified as a gate level stimulus,
+       : switching on -allow_n_nets option..
+Info   : STIM-0007 [StimInfo] Stored stimulus information '/stim#1' in SDB.
+--------------------------- Annotation Report ---------------------------
+Object Type         Asserted  UnAsserted  Unconnected  Total  Asserted% 
+                                           + Constant                   
+-------------------------------------------------------------------------
+Primary Ports                                                           
+  Inputs                  17           0            0     17    100.00% 
+  Outputs                 13           0            0     13    100.00% 
+  I/O                      0           0            0      0        N/A 
+Sequential Outputs                                                      
+  Memory                   0           0            0      0        N/A 
+  Flop                  1300           0            0   1300    100.00% 
+  Latch                    0           0            0      0        N/A 
+  Arch ICGC                0           0            0      0        N/A 
+  Inferred ICGC            0           0            0      0        N/A 
+  Total ICGC               0           0            0      0        N/A 
+Drivers                                                                 
+  Driver nets          31438           0            0  31438    100.00% 
+  RTL Driver nets      31421           0            0  31421    100.00% 
+DFT                                                                     
+  Input Ports              0           0            0      0        N/A 
+  Flop Outputs             0           0            0      0        N/A 
+  Memory Outputs           0           0            0      0        N/A 
+-------------------------------------------------------------------------
+Info   : STIM-0013 [StimInfo] Completed successfully.
+       : Info=12, Warn=0, Error=0, Fatal=0
+Statistics for commands executed by read_sdc:
+ "create_clock"             - successful      1 , failed      0 (runtime  0.01)
+ "current_design"           - successful      1 , failed      0 (runtime  0.01)
+ "get_clocks"               - successful     29 , failed      0 (runtime  0.00)
+ "get_ports"                - successful     30 , failed      0 (runtime  0.01)
+ "set_clock_gating_check"   - successful      1 , failed      0 (runtime  0.00)
+ "set_input_delay"          - successful     16 , failed      0 (runtime  0.00)
+ "set_output_delay"         - successful     13 , failed      0 (runtime  0.00)
+ "set_units"                - successful      2 , failed      0 (runtime  0.00)
+read_sdc completed in 00:00:00 (hh:mm:ss)
+Info: Saving in memory SDB: /home/ebapinis/ECE_574_Proj/glpower/joules_work/SDB_in_memory_before_power_map__2017.sdb
+  Setting attribute of root '/': 'design_power_effort' = none
+Info: Design state is 'mapped'. Skipping syn_gen.
+Info: Design state is 'mapped'. Skipping syn_map.
+ Uniquify netlist ...
+ Swap or remap avoided cells ...
+                                   Group   
+                                  Tot Wrst     Total - - DRC Totals - -
+                           Total  Weighted      Neg      Max       Max     Leakage 
+Operation                   Area   Slacks      Slack    Trans      Cap      Power  
+ init_iopt                 67952        0         0         0        0       9133 
+  Inserting buffers to remove assign statements...
+-------------------------------------------------------------------------------
+ hi_fo_buf                 67952        0         0         0        0       9133 
+
+           Trick     Calls     Accepts   Attempts    Time(secs) 
+-----------------------------------------------------------
+
+ 
+
+
+                                   Group   
+                                  Tot Wrst     Total - - DRC Totals - -
+                           Total  Weighted      Neg      Max       Max     Leakage 
+Operation                   Area   Slacks      Slack    Trans      Cap      Power  
+ init_delay                67952        0         0         0        0       9133 
+
+           Trick     Calls     Accepts   Attempts    Time(secs) 
+-----------------------------------------------------------
+
+ init_tns                  67952        0         0         0        0       9133 
+
+           Trick     Calls     Accepts   Attempts    Time(secs) 
+-----------------------------------------------------------
+
+stamp 'STEP3' being created for table 'default'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:05(00:00:00) |  00:00:00(00:00:00) |   0.0(  0.0) |   22:54:16 (Dec10) |  125.3 MB | init
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:48(00:01:06) |  00:00:43(00:01:06) | 100.0(100.0) |   22:55:22 (Dec10) |   1.56 GB | STEP3
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 3 * 1   (id: default, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+Info: Auto infer: rtlstim2gate -rule ungroup {%s/%s}
+Info: Auto infer: rtlstim2gate -rule reg_ext {%s_reg%s}
+Info: Auto infer: rtlstim2gate -rule bit_slice {[%s]}
+Info: Auto infer: rtlstim2gate -rule array_slice {[%s]}
+Info: Auto infer: rtlstim2gate -rule hier_slice {[%s]}
+Info: Auto infer: rtlstim2gate -rule generate {%s.%s}
+Info: Auto infer: rtlstim2gate -rule record {%s[%s]}
+Info: Design state 'mapped': stitching rtlstim2gate... Done
+# Info: Building RTLScore cache for /filter_top
+# Info: 1. marking memories .. done.
+# Info: 2. marking sequentials .. done.
+# Info: 3. marking macros .. done.
+# Info: 4. caching sequentials, macros, .. done.
+# Info: Cache for /filter_top completed.
+Finished exporting design database to file '/home/ebapinis/ECE_574_Proj/glpower/joules_work/base_proto.jdb' for 'filter_top' (command execution time mm:ss cpu = 00:02, real = 00:03).
+Info: Power_map DB saved in: /home/ebapinis/ECE_574_Proj/glpower/joules_work/base_proto.jdb
+# Info: Library: fast_vdd1v2 - Computing drive_strength of cells :  1/16  2/16  3/16  4/16  5/16  6/16  7/16  8/16  9/16 10/16 11/16 12/16 13/16 14/16 15/16 16/16
+# Info: Resolving lib, domain for 8 inferred buffer cells: 1/8 2/8 3/8 4/8 5/8 6/8 7/8 8/8
+Warning: Highest drive strength buffer will be used for generating clock tree.
+# Info: Setting -max_insertion_delay to 18.750 ns
+# Info: Setting -max_tree_depth to 44
+# Info: Setting -max_sink_slew to 2.500 ns
+# Info: Setting -max_slew_degradation to 0.100
+# Info: Processing 1 clock roots.
+# Info: Processing 14 clock endpoints:  1/14  2/14  3/14  4/14  5/14  6/14  7/14  8/14  9/14 10/14 11/14 12/14 13/14 14/14
+# Info: Fanouts leaf=12, branch=5, root=2
+# Info: Identifying root buffers: done.
+# Info: Identifying branch buffers: done.
+# Info: Identifying leaf buffers: done.
+# Info: Generating clock tree: 
+Info   : CTGN-0001 [CTGInfo] Clock tree CT1 created.
+done.
+Info   : PWRA-0001 [PwrInfo] compute_power effective options 
+Info   : ACTP-0001 [ACTPInfo] Timing initialization started
+Info   : ACTP-0001 Timing initialization ended
+Info   : PWRA-0001 Started time based power computation for /stim#1 (frames =
+       : 999)
+Info   : ACTP-0001 Activity propagation started for stim#1 netlist filter_top
+Info   : ACTP-0001 Activity propagation ended for stim#1
+Info   : PWRA-0009 [PwrInfo] Power Computation Progress Report :   0%   1%   2%   3%   4%   5%   6%   7%   8%   9%  10%  11%  12%  13%  14%  15%  16%  17%  18%  19%  20%  21%  22%  23%  24%  25%  26%  27%  28%  29%  30%  31%  32%  33%  34%  35%  36%  37%  38%  39%  40%  41%  42%  43%  44%  45%  46%  47%  48%  49%  50%  51%  52%  53%  54%  55%  56%  57%  58%  59%  60%  61%  62%  63%  64%  65%  66%  67%  68%  69%  70%  71%  72%  73%  74%  75%  76%  77%  78%  79%  80%  81%  82%  83%  84%  85%  86%  87%  88%  89%  90%  91%  92%  93%  94%  95%  96%  97%  98%  99% 100%
+Info   : PWRA-0001 CT1 clock tree seq clock pins are marked as non-ideal
+Info   : CTGN-0001 Clock tree CT#0 created.
+Info   : PWRA-0001 CT#0 clock tree seq clock pins are marked as ideal
+Info   : PWRA-0009 [PwrInfo] Clock tree Power Computation Progress Report :   0%   1%   2%   3%   4%   5%   6%   7%   8%   9%  10%  11%  12%  13%  14%  15%  16%  17%  18%  19%  20%  21%  22%  23%  24%  25%  26%  27%  28%  29%  30%  31%  32%  33%  34%  35%  36%  37%  38%  39%  40%  41%  42%  43%  44%  45%  46%  47%  48%  49%  50%  51%  52%  53%  54%  55%  56%  57%  58%  59%  60%  61%  62%  63%  64%  65%  66%  67%  68%  69%  70%  71%  72%  73%  74%  75%  76%  77%  78%  79%  80%  81%  82%  83%  84%  85%  86%  87%  88%  89%  90%  91%  92%  93%  94%  95%  96%  97%  98%  99% 100%
+Info   : PWRA-0001 Finished power computation for /stim#1
+Info   : PWRA-0007 [PwrInfo] Completed successfully.
+       : Info=10, Warn=0, Error=0, Fatal=0
+Output file: dut.final.report
+Info   : PWRA-0001 compute_power effective options 
+       : -mode : time_based
+Info   : ACTP-0001 Timing initialization started
+Info   : ACTP-0001 Timing initialization ended
+Warning: PWRA-0303 [PwrWarn] New compute_power command in non-append mode. This
+       : will erase previous PDB in memory.
+Info   : PWRA-0001 Started time based power computation for /stim#1 (frames =
+       : 999)
+Info   : ACTP-0001 Activity propagation started for stim#1 netlist filter_top
+Info   : ACTP-0001 Activity propagation ended for stim#1
+Info   : PWRA-0009 [PwrInfo] Power Computation Progress Report :   0%   1%   2%   3%   4%   5%   6%   7%   8%   9%  10%  11%  12%  13%  14%  15%  16%  17%  18%  19%  20%  21%  22%  23%  24%  25%  26%  27%  28%  29%  30%  31%  32%  33%  34%  35%  36%  37%  38%  39%  40%  41%  42%  43%  44%  45%  46%  47%  48%  49%  50%  51%  52%  53%  54%  55%  56%  57%  58%  59%  60%  61%  62%  63%  64%  65%  66%  67%  68%  69%  70%  71%  72%  73%  74%  75%  76%  77%  78%  79%  80%  81%  82%  83%  84%  85%  86%  87%  88%  89%  90%  91%  92%  93%  94%  95%  96%  97%  98%  99% 100%
+Info   : PWRA-0001 CT1 clock tree seq clock pins are marked as non-ideal
+Info   : CTGN-0001 Clock tree CT#0 created.
+Info   : PWRA-0001 CT#0 clock tree seq clock pins are marked as ideal
+Info   : PWRA-0009 [PwrInfo] Clock tree Power Computation Progress Report :   0%   1%   2%   3%   4%   5%   6%   7%   8%   9%  10%  11%  12%  13%  14%  15%  16%  17%  18%  19%  20%  21%  22%  23%  24%  25%  26%  27%  28%  29%  30%  31%  32%  33%  34%  35%  36%  37%  38%  39%  40%  41%  42%  43%  44%  45%  46%  47%  48%  49%  50%  51%  52%  53%  54%  55%  56%  57%  58%  59%  60%  61%  62%  63%  64%  65%  66%  67%  68%  69%  70%  71%  72%  73%  74%  75%  76%  77%  78%  79%  80%  81%  82%  83%  84%  85%  86%  87%  88%  89%  90%  91%  92%  93%  94%  95%  96%  97%  98%  99% 100%
+Info   : PWRA-0001 Finished power computation for /stim#1
+Info   : PWRA-0007 Completed successfully.
+       : Info=10, Warn=1, Error=0, Fatal=0
+# Info: Processing 999 frames:   1/999   2/999   3/999   4/999   5/999   6/999   7/999   8/999   9/999  10/999  11/999  12/999  13/999  14/999  15/999  16/999  17/999  18/999  19/999  20/999  21/999  22/999  23/999  24/999  25/999  26/999  27/999  28/999  29/999  30/999  31/999  32/999  33/999  34/999  35/999  36/999  37/999  38/999  39/999  40/999  41/999  42/999  43/999  44/999  45/999  46/999  47/999  48/999  49/999  50/999  51/999  52/999  53/999  54/999  55/999  56/999  57/999  58/999  59/999  60/999  61/999  62/999  63/999  64/999  65/999  66/999  67/999  68/999  69/999  70/999  71/999  72/999  73/999  74/999  75/999  76/999  77/999  78/999  79/999  80/999  81/999  82/999  83/999  84/999  85/999  86/999  87/999  88/999  89/999  90/999  91/999  92/999  93/999  94/999  95/999  96/999  97/999  98/999  99/999 100/999 101/999 102/999 103/999 104/999 105/999 106/999 107/999 108/999 109/999 110/999 111/999 112/999 113/999 114/999 115/999 116/999 117/999 118/999 119/999 120/999 121/999 122/999 123/999 124/999 125/999 126/999 127/999 128/999 129/999 130/999 131/999 132/999 133/999 134/999 135/999 136/999 137/999 138/999 139/999 140/999 141/999 142/999 143/999 144/999 145/999 146/999 147/999 148/999 149/999 150/999 151/999 152/999 153/999 154/999 155/999 156/999 157/999 158/999 159/999 160/999 161/999 162/999 163/999 164/999 165/999 166/999 167/999 168/999 169/999 170/999 171/999 172/999 173/999 174/999 175/999 176/999 177/999 178/999 179/999 180/999 181/999 182/999 183/999 184/999 185/999 186/999 187/999 188/999 189/999 190/999 191/999 192/999 193/999 194/999 195/999 196/999 197/999 198/999 199/999 200/999 201/999 202/999 203/999 204/999 205/999 206/999 207/999 208/999 209/999 210/999 211/999 212/999 213/999 214/999 215/999 216/999 217/999 218/999 219/999 220/999 221/999 222/999 223/999 224/999 225/999 226/999 227/999 228/999 229/999 230/999 231/999 232/999 233/999 234/999 235/999 236/999 237/999 238/999 239/999 240/999 241/999 242/999 243/999 244/999 245/999 246/999 247/999 248/999 249/999 250/999 251/999 252/999 253/999 254/999 255/999 256/999 257/999 258/999 259/999 260/999 261/999 262/999 263/999 264/999 265/999 266/999 267/999 268/999 269/999 270/999 271/999 272/999 273/999 274/999 275/999 276/999 277/999 278/999 279/999 280/999 281/999 282/999 283/999 284/999 285/999 286/999 287/999 288/999 289/999 290/999 291/999 292/999 293/999 294/999 295/999 296/999 297/999 298/999 299/999 300/999 301/999 302/999 303/999 304/999 305/999 306/999 307/999 308/999 309/999 310/999 311/999 312/999 313/999 314/999 315/999 316/999 317/999 318/999 319/999 320/999 321/999 322/999 323/999 324/999 325/999 326/999 327/999 328/999 329/999 330/999 331/999 332/999 333/999 334/999 335/999 336/999 337/999 338/999 339/999 340/999 341/999 342/999 343/999 344/999 345/999 346/999 347/999 348/999 349/999 350/999 351/999 352/999 353/999 354/999 355/999 356/999 357/999 358/999 359/999 360/999 361/999 362/999 363/999 364/999 365/999 366/999 367/999 368/999 369/999 370/999 371/999 372/999 373/999 374/999 375/999 376/999 377/999 378/999 379/999 380/999 381/999 382/999 383/999 384/999 385/999 386/999 387/999 388/999 389/999 390/999 391/999 392/999 393/999 394/999 395/999 396/999 397/999 398/999 399/999 400/999 401/999 402/999 403/999 404/999 405/999 406/999 407/999 408/999 409/999 410/999 411/999 412/999 413/999 414/999 415/999 416/999 417/999 418/999 419/999 420/999 421/999 422/999 423/999 424/999 425/999 426/999 427/999 428/999 429/999 430/999 431/999 432/999 433/999 434/999 435/999 436/999 437/999 438/999 439/999 440/999 441/999 442/999 443/999 444/999 445/999 446/999 447/999 448/999 449/999 450/999 451/999 452/999 453/999 454/999 455/999 456/999 457/999 458/999 459/999 460/999 461/999 462/999 463/999 464/999 465/999 466/999 467/999 468/999 469/999 470/999 471/999 472/999 473/999 474/999 475/999 476/999 477/999 478/999 479/999 480/999 481/999 482/999 483/999 484/999 485/999 486/999 487/999 488/999 489/999 490/999 491/999 492/999 493/999 494/999 495/999 496/999 497/999 498/999 499/999 500/999 501/999 502/999 503/999 504/999 505/999 506/999 507/999 508/999 509/999 510/999 511/999 512/999 513/999 514/999 515/999 516/999 517/999 518/999 519/999 520/999 521/999 522/999 523/999 524/999 525/999 526/999 527/999 528/999 529/999 530/999 531/999 532/999 533/999 534/999 535/999 536/999 537/999 538/999 539/999 540/999 541/999 542/999 543/999 544/999 545/999 546/999 547/999 548/999 549/999 550/999 551/999 552/999 553/999 554/999 555/999 556/999 557/999 558/999 559/999 560/999 561/999 562/999 563/999 564/999 565/999 566/999 567/999 568/999 569/999 570/999 571/999 572/999 573/999 574/999 575/999 576/999 577/999 578/999 579/999 580/999 581/999 582/999 583/999 584/999 585/999 586/999 587/999 588/999 589/999 590/999 591/999 592/999 593/999 594/999 595/999 596/999 597/999 598/999 599/999 600/999 601/999 602/999 603/999 604/999 605/999 606/999 607/999 608/999 609/999 610/999 611/999 612/999 613/999 614/999 615/999 616/999 617/999 618/999 619/999 620/999 621/999 622/999 623/999 624/999 625/999 626/999 627/999 628/999 629/999 630/999 631/999 632/999 633/999 634/999 635/999 636/999 637/999 638/999 639/999 640/999 641/999 642/999 643/999 644/999 645/999 646/999 647/999 648/999 649/999 650/999 651/999 652/999 653/999 654/999 655/999 656/999 657/999 658/999 659/999 660/999 661/999 662/999 663/999 664/999 665/999 666/999 667/999 668/999 669/999 670/999 671/999 672/999 673/999 674/999 675/999 676/999 677/999 678/999 679/999 680/999 681/999 682/999 683/999 684/999 685/999 686/999 687/999 688/999 689/999 690/999 691/999 692/999 693/999 694/999 695/999 696/999 697/999 698/999 699/999 700/999 701/999 702/999 703/999 704/999 705/999 706/999 707/999 708/999 709/999 710/999 711/999 712/999 713/999 714/999 715/999 716/999 717/999 718/999 719/999 720/999 721/999 722/999 723/999 724/999 725/999 726/999 727/999 728/999 729/999 730/999 731/999 732/999 733/999 734/999 735/999 736/999 737/999 738/999 739/999 740/999 741/999 742/999 743/999 744/999 745/999 746/999 747/999 748/999 749/999 750/999 751/999 752/999 753/999 754/999 755/999 756/999 757/999 758/999 759/999 760/999 761/999 762/999 763/999 764/999 765/999 766/999 767/999 768/999 769/999 770/999 771/999 772/999 773/999 774/999 775/999 776/999 777/999 778/999 779/999 780/999 781/999 782/999 783/999 784/999 785/999 786/999 787/999 788/999 789/999 790/999 791/999 792/999 793/999 794/999 795/999 796/999 797/999 798/999 799/999 800/999 801/999 802/999 803/999 804/999 805/999 806/999 807/999 808/999 809/999 810/999 811/999 812/999 813/999 814/999 815/999 816/999 817/999 818/999 819/999 820/999 821/999 822/999 823/999 824/999 825/999 826/999 827/999 828/999 829/999 830/999 831/999 832/999 833/999 834/999 835/999 836/999 837/999 838/999 839/999 840/999 841/999 842/999 843/999 844/999 845/999 846/999 847/999 848/999 849/999 850/999 851/999 852/999 853/999 854/999 855/999 856/999 857/999 858/999 859/999 860/999 861/999 862/999 863/999 864/999 865/999 866/999 867/999 868/999 869/999 870/999 871/999 872/999 873/999 874/999 875/999 876/999 877/999 878/999 879/999 880/999 881/999 882/999 883/999 884/999 885/999 886/999 887/999 888/999 889/999 890/999 891/999 892/999 893/999 894/999 895/999 896/999 897/999 898/999 899/999 900/999 901/999 902/999 903/999 904/999 905/999 906/999 907/999 908/999 909/999 910/999 911/999 912/999 913/999 914/999 915/999 916/999 917/999 918/999 919/999 920/999 921/999 922/999 923/999 924/999 925/999 926/999 927/999 928/999 929/999 930/999 931/999 932/999 933/999 934/999 935/999 936/999 937/999 938/999 939/999 940/999 941/999 942/999 943/999 944/999 945/999 946/999 947/999 948/999 949/999 950/999 951/999 952/999 953/999 954/999 955/999 956/999 957/999 958/999 959/999 960/999 961/999 962/999 963/999 964/999 965/999 966/999 967/999 968/999 969/999 970/999 971/999 972/999 973/999 974/999 975/999 976/999 977/999 978/999 979/999 980/999 981/999 982/999 983/999 984/999 985/999 986/999 987/999 988/999 989/999 990/999 991/999 992/999 993/999 994/999 995/999 996/999 997/999 998/999 999/999
+Reading file 'dut.trace.png.data' :   1/998   2/998   3/998   4/998   5/998   6/998   7/998   8/998   9/998  10/998  11/998  12/998  13/998  14/998  15/998  16/998  17/998  18/998  19/998  20/998  21/998  22/998  23/998  24/998  25/998  26/998  27/998  28/998  29/998  30/998  31/998  32/998  33/998  34/998  35/998  36/998  37/998  38/998  39/998  40/998  41/998  42/998  43/998  44/998  45/998  46/998  47/998  48/998  49/998  50/998  51/998  52/998  53/998  54/998  55/998  56/998  57/998  58/998  59/998  60/998  61/998  62/998  63/998  64/998  65/998  66/998  67/998  68/998  69/998  70/998  71/998  72/998  73/998  74/998  75/998  76/998  77/998  78/998  79/998  80/998  81/998  82/998  83/998  84/998  85/998  86/998  87/998  88/998  89/998  90/998  91/998  92/998  93/998  94/998  95/998  96/998  97/998  98/998  99/998 100/998 101/998 102/998 103/998 104/998 105/998 106/998 107/998 108/998 109/998 110/998 111/998 112/998 113/998 114/998 115/998 116/998 117/998 118/998 119/998 120/998 121/998 122/998 123/998 124/998 125/998 126/998 127/998 128/998 129/998 130/998 131/998 132/998 133/998 134/998 135/998 136/998 137/998 138/998 139/998 140/998 141/998 142/998 143/998 144/998 145/998 146/998 147/998 148/998 149/998 150/998 151/998 152/998 153/998 154/998 155/998 156/998 157/998 158/998 159/998 160/998 161/998 162/998 163/998 164/998 165/998 166/998 167/998 168/998 169/998 170/998 171/998 172/998 173/998 174/998 175/998 176/998 177/998 178/998 179/998 180/998 181/998 182/998 183/998 184/998 185/998 186/998 187/998 188/998 189/998 190/998 191/998 192/998 193/998 194/998 195/998 196/998 197/998 198/998 199/998 200/998 201/998 202/998 203/998 204/998 205/998 206/998 207/998 208/998 209/998 210/998 211/998 212/998 213/998 214/998 215/998 216/998 217/998 218/998 219/998 220/998 221/998 222/998 223/998 224/998 225/998 226/998 227/998 228/998 229/998 230/998 231/998 232/998 233/998 234/998 235/998 236/998 237/998 238/998 239/998 240/998 241/998 242/998 243/998 244/998 245/998 246/998 247/998 248/998 249/998 250/998 251/998 252/998 253/998 254/998 255/998 256/998 257/998 258/998 259/998 260/998 261/998 262/998 263/998 264/998 265/998 266/998 267/998 268/998 269/998 270/998 271/998 272/998 273/998 274/998 275/998 276/998 277/998 278/998 279/998 280/998 281/998 282/998 283/998 284/998 285/998 286/998 287/998 288/998 289/998 290/998 291/998 292/998 293/998 294/998 295/998 296/998 297/998 298/998 299/998 300/998 301/998 302/998 303/998 304/998 305/998 306/998 307/998 308/998 309/998 310/998 311/998 312/998 313/998 314/998 315/998 316/998 317/998 318/998 319/998 320/998 321/998 322/998 323/998 324/998 325/998 326/998 327/998 328/998 329/998 330/998 331/998 332/998 333/998 334/998 335/998 336/998 337/998 338/998 339/998 340/998 341/998 342/998 343/998 344/998 345/998 346/998 347/998 348/998 349/998 350/998 351/998 352/998 353/998 354/998 355/998 356/998 357/998 358/998 359/998 360/998 361/998 362/998 363/998 364/998 365/998 366/998 367/998 368/998 369/998 370/998 371/998 372/998 373/998 374/998 375/998 376/998 377/998 378/998 379/998 380/998 381/998 382/998 383/998 384/998 385/998 386/998 387/998 388/998 389/998 390/998 391/998 392/998 393/998 394/998 395/998 396/998 397/998 398/998 399/998 400/998 401/998 402/998 403/998 404/998 405/998 406/998 407/998 408/998 409/998 410/998 411/998 412/998 413/998 414/998 415/998 416/998 417/998 418/998 419/998 420/998 421/998 422/998 423/998 424/998 425/998 426/998 427/998 428/998 429/998 430/998 431/998 432/998 433/998 434/998 435/998 436/998 437/998 438/998 439/998 440/998 441/998 442/998 443/998 444/998 445/998 446/998 447/998 448/998 449/998 450/998 451/998 452/998 453/998 454/998 455/998 456/998 457/998 458/998 459/998 460/998 461/998 462/998 463/998 464/998 465/998 466/998 467/998 468/998 469/998 470/998 471/998 472/998 473/998 474/998 475/998 476/998 477/998 478/998 479/998 480/998 481/998 482/998 483/998 484/998 485/998 486/998 487/998 488/998 489/998 490/998 491/998 492/998 493/998 494/998 495/998 496/998 497/998 498/998 499/998 500/998 501/998 502/998 503/998 504/998 505/998 506/998 507/998 508/998 509/998 510/998 511/998 512/998 513/998 514/998 515/998 516/998 517/998 518/998 519/998 520/998 521/998 522/998 523/998 524/998 525/998 526/998 527/998 528/998 529/998 530/998 531/998 532/998 533/998 534/998 535/998 536/998 537/998 538/998 539/998 540/998 541/998 542/998 543/998 544/998 545/998 546/998 547/998 548/998 549/998 550/998 551/998 552/998 553/998 554/998 555/998 556/998 557/998 558/998 559/998 560/998 561/998 562/998 563/998 564/998 565/998 566/998 567/998 568/998 569/998 570/998 571/998 572/998 573/998 574/998 575/998 576/998 577/998 578/998 579/998 580/998 581/998 582/998 583/998 584/998 585/998 586/998 587/998 588/998 589/998 590/998 591/998 592/998 593/998 594/998 595/998 596/998 597/998 598/998 599/998 600/998 601/998 602/998 603/998 604/998 605/998 606/998 607/998 608/998 609/998 610/998 611/998 612/998 613/998 614/998 615/998 616/998 617/998 618/998 619/998 620/998 621/998 622/998 623/998 624/998 625/998 626/998 627/998 628/998 629/998 630/998 631/998 632/998 633/998 634/998 635/998 636/998 637/998 638/998 639/998 640/998 641/998 642/998 643/998 644/998 645/998 646/998 647/998 648/998 649/998 650/998 651/998 652/998 653/998 654/998 655/998 656/998 657/998 658/998 659/998 660/998 661/998 662/998 663/998 664/998 665/998 666/998 667/998 668/998 669/998 670/998 671/998 672/998 673/998 674/998 675/998 676/998 677/998 678/998 679/998 680/998 681/998 682/998 683/998 684/998 685/998 686/998 687/998 688/998 689/998 690/998 691/998 692/998 693/998 694/998 695/998 696/998 697/998 698/998 699/998 700/998 701/998 702/998 703/998 704/998 705/998 706/998 707/998 708/998 709/998 710/998 711/998 712/998 713/998 714/998 715/998 716/998 717/998 718/998 719/998 720/998 721/998 722/998 723/998 724/998 725/998 726/998 727/998 728/998 729/998 730/998 731/998 732/998 733/998 734/998 735/998 736/998 737/998 738/998 739/998 740/998 741/998 742/998 743/998 744/998 745/998 746/998 747/998 748/998 749/998 750/998 751/998 752/998 753/998 754/998 755/998 756/998 757/998 758/998 759/998 760/998 761/998 762/998 763/998 764/998 765/998 766/998 767/998 768/998 769/998 770/998 771/998 772/998 773/998 774/998 775/998 776/998 777/998 778/998 779/998 780/998 781/998 782/998 783/998 784/998 785/998 786/998 787/998 788/998 789/998 790/998 791/998 792/998 793/998 794/998 795/998 796/998 797/998 798/998 799/998 800/998 801/998 802/998 803/998 804/998 805/998 806/998 807/998 808/998 809/998 810/998 811/998 812/998 813/998 814/998 815/998 816/998 817/998 818/998 819/998 820/998 821/998 822/998 823/998 824/998 825/998 826/998 827/998 828/998 829/998 830/998 831/998 832/998 833/998 834/998 835/998 836/998 837/998 838/998 839/998 840/998 841/998 842/998 843/998 844/998 845/998 846/998 847/998 848/998 849/998 850/998 851/998 852/998 853/998 854/998 855/998 856/998 857/998 858/998 859/998 860/998 861/998 862/998 863/998 864/998 865/998 866/998 867/998 868/998 869/998 870/998 871/998 872/998 873/998 874/998 875/998 876/998 877/998 878/998 879/998 880/998 881/998 882/998 883/998 884/998 885/998 886/998 887/998 888/998 889/998 890/998 891/998 892/998 893/998 894/998 895/998 896/998 897/998 898/998 899/998 900/998 901/998 902/998 903/998 904/998 905/998 906/998 907/998 908/998 909/998 910/998 911/998 912/998 913/998 914/998 915/998 916/998 917/998 918/998 919/998 920/998 921/998 922/998 923/998 924/998 925/998 926/998 927/998 928/998 929/998 930/998 931/998 932/998 933/998 934/998 935/998 936/998 937/998 938/998 939/998 940/998 941/998 942/998 943/998 944/998 945/998 946/998 947/998 948/998 949/998 950/998 951/998 952/998 953/998 954/998 955/998 956/998 957/998 958/998 959/998 960/998 961/998 962/998 963/998 964/998 965/998 966/998 967/998 968/998 969/998 970/998 971/998 972/998 973/998 974/998 975/998 976/998 977/998 978/998 979/998 980/998 981/998 982/998 983/998 984/998 985/998 986/998 987/998 988/998 989/998 990/998 991/998 992/998 993/998 994/998 995/998 996/998 997/998 998/998
+Png file saved as: dut.trace.png
+Power profile data saved in: dut.trace.png.data
+Info: To regenerate plot, run: replot_data dut.trace.png.data
+
+Lic Summary:
+[22:56:56.409827] Cdslmd servers: arc-lic-02
+[22:56:56.409833] Feature usage summary:
+[22:56:56.409834] Joules_RTL_Power
+
+Normal exit.

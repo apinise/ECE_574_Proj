@@ -75,10 +75,12 @@ always begin
 end
 
 always begin
-  #2 clk <= ~clk;
+  #25 clk <= ~clk;
 end
 
 initial begin 
+	$dumpfile("trace.vcd");
+	$dumpvars(0, filter_top_tb);
 	SCK <= 1'b0;
 	CS <= 1'b1;
 	count <= 7'd31;
